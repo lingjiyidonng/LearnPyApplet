@@ -1,6 +1,6 @@
 {
   "pages":[
-    "pages/index/index",
+    "pages/tabbar_template/tabbar_template",
     "pages/logs/logs"
   ],
   "window":{
@@ -9,6 +9,9 @@
     "navigationBarTitleText": "学派",
     "navigationBarTextStyle":"white"
   },
+  
+  
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
+

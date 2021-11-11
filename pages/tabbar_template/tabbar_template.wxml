@@ -1,0 +1,25 @@
+<!-- 组件显示 -->
+<view hidden="{{index == 0? false: true}}">
+  <component_course/>
+</view>
+<view hidden="{{index == 1? false: true}}">
+  <component_exercise/>
+</view>
+<view hidden="{{index == 2? false: true}}">
+  <component_home/>
+</view>
+<view hidden="{{index == 3? false: true}}">
+  <component_project/>
+</view>
+<view hidden="{{index == 4? false: true}}">
+  <component_me/>
+</view>
+
+<!-- 自定义 tabbar -->
+<view class="tabbar">
+  <view class="item {{index==idx?'active':''}}" wx:for="{{tabBar}}" wx:for-index="idx" bindtap="goto" data-index='{{idx}}'>
+    <i class="iconfont {{item.icon}} icon"></i>
+    <view class="text">{{item.name}}</view>
+  </view>
+  <view class="move" style="left:{{75+(index*126)}}rpx"></view>
+</view>

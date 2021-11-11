@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "component_course": "/pages/component/course/course",
+    "component_exercise": "/pages/component/exercise/exercise",
+    "component_home": "/pages/component/home/home",
+    "component_project": "/pages/component/project/project",
+    "component_me": "/pages/component/me/me"
+  }
+}
