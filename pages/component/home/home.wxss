@@ -1,0 +1,78 @@
+/* pages/component/home/home.js.wxss */
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.container1{
+    width: 100%;
+    height: 550rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding:0 50rpx;
+    justify-content: flex-start;
+    align-items: center;
+  }
+.container2{
+    width: 100%;
+    height: 500rpx;
+    position: fixed;
+    top: 480rpx;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding:0 50rpx;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo_image{
+    height: 250rpx;
+    width: 250rpx;
+    margin-top: 5rpx;
+}
+.daka{
+    height: 200rpx;
+    width: 600rpx;
+    color: aliceblue;
+    
+    text-align: center;
+}
+.btn{
+    height: 220rpx;
+    width: 600rpx;
+    border-radius: 52rpx;
+    background-color: rgba(32, 31, 47, 100);
+    color: #F4F2F2;
+    font-size: 32rpx;
+    font-family: 'PingFangSC-medium';
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+  }
+.icon{
+    width: 126rpx;
+    height: 126rpx;
+    line-height: 46rpx;
+    border-radius: 46rpx;
+    margin-top: 50rpx;
+    background-color: rgba(74, 74, 98, 100);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text{
+    width: 346rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

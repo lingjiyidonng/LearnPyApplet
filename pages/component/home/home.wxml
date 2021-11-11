@@ -1,0 +1,29 @@
+<!--pages/component/home/home.js.wxml-->
+<view class="container">
+    <view class="container1">
+        <image class="logo_image" src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/homepage/learn_py.png"></image>
+        <view class="daka">每日打卡模块</view>
+    </view>
+    <view class="container2">
+        <button class="btn" bindtap="click1">
+            <view class="icon" >
+                <image src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/homepage/everyday_exercise.png" style="width: 82rpx; height: 90rpx;"></image>
+            </view>
+            <view class="text" >
+                <text>每日试题</text>
+                <text>Compute Net Amount</text>
+            </view>
+            
+        </button>
+        <button class="btn" bindtap="click2">
+            <view class="icon">
+                <image src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/homepage/everyday_project.png" style="width: 110rpx; height: 120rpx;"></image>
+            </view>
+            <view class="text" >
+                <text>每日项目</text>
+                <text>Halfish/cs231n</text>
+            </view>
+        </button>
+    </view>
+    
+</view>

@@ -1,0 +1,2 @@
+<!--pages/component/me/me.js.wxml-->
+<button bindtap="click">跳转个人收藏</button>

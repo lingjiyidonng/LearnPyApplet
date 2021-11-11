@@ -1,7 +1,12 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/tabbar_template/tabbar_template",
+    "pages/me/me",
+    "pages/everyday_exercise/everyday_exercise",
+    "pages/everyday_project/everyday_project",
     "pages/logs/logs"
+    
   ],
   "window":{
     "backgroundTextStyle":"dark",
@@ -9,6 +14,9 @@
     "navigationBarTitleText": "学派",
     "navigationBarTextStyle":"white"
   },
-  "style": "v2",
+  
+  
+  
   "sitemapLocation": "sitemap.json"
 }
+
