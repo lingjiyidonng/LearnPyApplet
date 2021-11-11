@@ -29,6 +29,19 @@ Component({
      * 组件的方法列表
      */
     methods: {
+        click1:function(){
+            console.log("click1");
+            wx.navigateTo({
+              url: '/pages/everyday_exercise/everyday_exercise',
+            })
+        },
+        click2:function(){
+            console.log("click2")
+            wx.navigateTo({
+              url: '/pages/everyday_project/everyday_project',
+            })
+        }
 
-    }
+    },
+    
 })

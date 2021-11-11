@@ -1,2 +1,2 @@
 <!--pages/component/me/me.js.wxml-->
-<text style="color: aliceblue;">pages/component/me/me.js.wxml</text>
+<button bindtap="click">跳转个人收藏</button>

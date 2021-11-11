@@ -29,6 +29,10 @@ Component({
      * 组件的方法列表
      */
     methods: {
-
+        click:function(){
+            wx.navigateTo({
+              url: '/pages/me/me',
+            })
+        }
     }
 })
