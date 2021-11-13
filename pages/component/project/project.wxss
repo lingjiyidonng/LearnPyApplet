@@ -1,1 +1,11 @@
 /* pages/component/project/project.js.wxss */
+.p-container{
+    margin-left: 58rpx;
+    margin-top: 244rpx;
+    width: 630rpx;
+    height: 1016rpx;
+    line-height: 40rpx;
+    border-radius: 24rpx;
+    background-color: rgba(74, 74, 98, 100);
+    text-align: center;
+}

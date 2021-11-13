@@ -1,1 +1,128 @@
 /* pages/component/me/me.js.wxss */
+.m-container{
+    margin-left: 58rpx;
+    margin-top: 24rpx;
+    width: 630rpx;
+    height: 950rpx;
+    line-height: 40rpx;
+    border-radius: 24rpx;
+    background-color: rgba(74, 74, 98, 100);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.account{
+    width: 100%;
+    margin-top: 10rpx;
+    height: 200rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.account-image{
+    width: 220rpx;
+    height: 220rpx;
+    border-radius: 80rpx;
+}
+.name{
+    width: 400rpx;
+    height: 220rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.user-name{
+    margin-left: 40rpx;
+    width: 380rpx;
+    height: 58rpx;
+    color: rgba(255, 255, 255, 100);
+    font-size: 40rpx;
+    font-weight: 900;
+    text-align: left;
+    font-family: 'SourceHanSansSC-regular';
+}
+.shiming{
+    margin-left: 40rpx;
+    margin-top: 20rpx;
+    width: 102rpx;
+    height: 44rpx;
+    line-height: 44rpx;
+    border-radius: 16rpx;
+    background-color: rgba(74, 74, 98, 100);
+    color: rgba(255, 255, 255, 100);
+    font-size: 20rpx;
+    font-weight: 900;
+    text-align: center;
+    font-family: Arial;
+    border: 1rpx solid rgba(32, 31, 47, 100);
+}
+.my-list{
+    width: 100%;
+    margin-top: 30rpx;
+    height: 600rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.my-list-item{
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.my-list-item-icon1{
+    margin-left: 40rpx;
+    width: 72rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    text-align: center;
+    /* border: 1rpx solid rgba(187, 187, 187, 100); */
+    background: url('https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/me/collection_dark.png');
+    background-size: 100%;
+}
+.my-list-item-icon2{
+    margin-left: 40rpx;
+    width: 72rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    text-align: center;
+    border-radius: 50%;
+    background: url('https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/me/my_code.png') no-repeat;
+    background-size: 80%;
+    background-position: center;
+    background-color: #FFFFFF;
+}
+.my-list-item-icon3{
+    margin-left: 40rpx;
+    width: 72rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    text-align: center;
+    border-radius: 50%;
+    background: url('https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/me/help.png') no-repeat;
+    background-size: 80%;
+    background-position: center;
+    background-color: #FFFFFF;
+}
+.my-list-item-name{
+    width: 300rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    text-align: center;
+    color: rgba(255, 255, 255, 100);
+    font-size: 36rpx;
+    text-align: center;
+    font-family: 'SourceHanSansSC-regular';
+}
+.enter-icon{
+    margin-left: 110rpx;
+    width: 72rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    text-align: center;
+    /* background-color: aliceblue; */
+}

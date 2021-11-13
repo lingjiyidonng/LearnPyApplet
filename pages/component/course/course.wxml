@@ -1,2 +1,4 @@
 <!--pages/component/course/course.js.wxml-->
-<text style="color: aliceblue;">pages/component/course/course.js.wxml</text>
+<view class="c-container">
+
+</view>

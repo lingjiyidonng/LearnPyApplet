@@ -8,6 +8,8 @@
     "pages/everyday_project/everyday_project",
     "pages/coding/coding",
     "pages/ideas/ideas",
+    "pages/my_star/my_star",
+    "pages/my_code/my_code",
     "pages/logs/logs"
     
   ],
