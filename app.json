@@ -1,10 +1,15 @@
 {
   "pages":[
+    
     "pages/index/index",
     "pages/tabbar_template/tabbar_template",
     "pages/me/me",
     "pages/everyday_exercise/everyday_exercise",
     "pages/everyday_project/everyday_project",
+    "pages/coding/coding",
+    "pages/ideas/ideas",
+    "pages/my_star/my_star",
+    "pages/my_code/my_code",
     "pages/logs/logs"
     
   ],
