@@ -5,7 +5,12 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        date_list:[
+            "2022.9.15","2022.9.29","2022.9.18"
+        ],
+        title_list:[
+            "初识Python","练习1","Computer Net Amount"
+        ]
     },
 
     /**

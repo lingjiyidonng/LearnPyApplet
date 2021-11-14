@@ -22,13 +22,19 @@ Component({
      * 组件的初始数据
      */
     data: {
-
+        num_list:[
+            "1","2","3","4","5","6"
+        ],
     },
 
     /**
      * 组件的方法列表
      */
     methods: {
-
+        toExercise:function(){
+            wx.navigateTo({
+              url: '/pages/exercise_detail/exercise_detail',
+            })
+        }
     }
 })

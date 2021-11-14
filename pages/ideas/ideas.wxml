@@ -1,2 +1,14 @@
 <!--pages/ideas/ideas.wxml-->
-<text style="color: aliceblue;">pages/ideas/ideas.wxml</text>
+<view class="ideas_title">优秀代码</view>
+<view class="ideas_container">
+    <block wx:key="index" wx:for="{{ideas_list}}">
+        <view class="ideas_item">
+            <view class="ideas_item_image"></view>
+            <view class="ideas_item_user">
+                <view class="user_name">1</view>
+                <view class="fengexian"></view>
+                <view class="ideas_item_describe">I hope this code will be hel...</view>
+            </view>
+        </view>
+    </block>
+</view>

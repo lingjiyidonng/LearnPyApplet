@@ -1,1 +1,55 @@
 /* pages/my_code/my_code.wxss */
+.my_code_container{
+    margin-top: 30rpx;
+    margin-left: 50rpx;
+    width: 640rpx;
+    height: 1000rpx;
+    line-height: 40rpx;
+    border-radius: 24rpx;
+    background-color: rgba(74, 74, 98, 100);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.my_code_item{
+    margin-top: 50rpx;
+    width: 540rpx;
+    height: 138rpx;
+    line-height: 40rpx;
+    border-radius: 24rpx;
+    background-color: rgba(202, 203, 210, 100);
+    text-align: center;
+    border: 1rpx solid rgba(187, 187, 187, 100);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.date{
+    margin-top: 18rpx;
+    margin-left: 20rpx;
+    width: 90%;
+    height: 46rpx;
+    color: rgba(99, 92, 92, 100);
+    font-size: 32rpx;
+    text-align: left;
+    font-family: 'PingFangSC-regular';
+}
+.fengexian{
+    margin-top: 10rpx;
+    width: 488rpx;
+    height: NaNpx;
+    border: 2rpx solid rgba(227, 227, 227, 100);
+}
+.title{
+    margin-top: 10rpx;
+    margin-left: 20rpx;
+    width: 90%;
+    height: 40rpx;
+    color: rgba(135, 128, 128, 100);
+    font-size: 28rpx;
+    text-align: left;
+    font-family: 'PingFangSC-regular';
+}

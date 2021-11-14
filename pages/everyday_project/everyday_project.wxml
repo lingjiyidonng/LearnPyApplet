@@ -1,2 +1,5 @@
 <!--pages/everyday_project/everyday_project.wxml-->
-<text style="color: aliceblue;">pages/everyday_project/everyday_project.wxml</text>
+<view class="container">
+  
+</view>
+
