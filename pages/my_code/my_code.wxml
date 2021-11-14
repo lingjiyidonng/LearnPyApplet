@@ -1,2 +1,12 @@
 <!--pages/my_code/my_code.wxml-->
-<text style="color: aliceblue;">pages/my_code/my_code.wxml</text>
+
+<view class="my_code_container">
+    <block wx:key="index" wx:for="{{date_list}}" wx:for="{{title_list}}">
+        <view class="my_code_item">
+            <view class="date">{{date_list[index]}}</view>
+            <view class="fengexian"></view>
+            <view class="title">{{title_list[index]}}</view>
+        </view>
+        
+        </block>
+</view>
