@@ -1,10 +1,10 @@
 <!--pages/my_star/my_star.wxml-->
 <view class="my_star_container">
     <view class="star_type">
-        <button class="type_btn">
+        <button class="type_btn" bindtap="toProject">
             <view class="btn_text">项目</view>
         </button>
-        <button class="type_btn">
+        <button class="type_btn" bindtap="toCourse">
             <view class="btn_text">教程</view>
         </button>
     </view>
