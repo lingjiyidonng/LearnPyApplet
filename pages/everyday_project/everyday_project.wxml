@@ -1,2 +1,15 @@
 <!--pages/everyday_project/everyday_project.wxml-->
-<text style="color: aliceblue;">pages/everyday_project/everyday_project.wxml</text>
+<view class="container">
+  <view class='container-layer-flex'>
+    <view class='container-title'>
+      阮一峰ES6经典入门
+    </view>
+    <view class='container-btn' bindtap='onClick' data-str='my_code'>
+      <span>开始</span>
+    </view>
+    <view class='container-btn' bindtap='onClick' data-str='my_star' >
+      <span>版权许可</span>
+    </view>
+  </view>
+</view>
+

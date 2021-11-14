@@ -12,3 +12,7 @@
         <button class="btn_1" bindtap="coding">编码</button>
         <button class="btn_2" bindtap="ideas">ideas</button>
 </view>
+<!--index.wxml-->
+<view class="container">
+  <towxml nodes="{{article}}"/>
+</view>

@@ -1,4 +1,4 @@
 <!--pages/component/course/course.js.wxml-->
 <view class="c-container">
-
+  <towxml nodes="{{article}}"/>
 </view>
