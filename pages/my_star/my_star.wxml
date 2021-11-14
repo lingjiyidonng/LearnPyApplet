@@ -1,2 +1,26 @@
 <!--pages/my_star/my_star.wxml-->
-<text style="color: aliceblue;">pages/my_star/my_star.wxml</text>
+<view class="my_star_container">
+    <view class="star_type">
+        <button class="type_btn">
+            <view class="btn_text">项目</view>
+        </button>
+        <button class="type_btn">
+            <view class="btn_text">教程</view>
+        </button>
+    </view>
+    <view class="title_item_box">
+        <block wx:key="index" wx:for="{{title_item_list}}" wx:for="{{title_item_content}}">
+        <view class="fengexian"></view>
+            <view class="title_item_box_1">
+                <view class="star_icon"></view>
+                <view class="title">
+                    <view class="item_name">{{title_item_list[index]}}</view>
+                    <view class="python">python</view>
+                </view>
+            </view>
+            <view class="item_content">{{title_item_content[index]}}</view>
+        
+        </block>
+    </view>
+    
+</view>

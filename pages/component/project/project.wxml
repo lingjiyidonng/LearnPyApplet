@@ -7,6 +7,7 @@
     </view>
     <view class="title_item_box">
         <block wx:key="index" wx:for="{{title_item_list}}" wx:for="{{title_item_content}}">
+            <view class="fengexian"></view>
             <view class="title_item_box_1">
                 <view class="star_icon"></view>
                 <view class="title">
