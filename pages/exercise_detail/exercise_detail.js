@@ -1,4 +1,4 @@
-// pages/everyday_exercise/everyday_exercise.js
+// pages/exercise_detail/exercise_detail.js
 Page({
 
     /**
@@ -9,8 +9,8 @@ Page({
         robot_image:'https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/everyday_exercise/robot_dark.png',
         robot_image_1:'https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/everyday_exercise/robot_dark.png',
         robot_image_2:'https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/everyday_exercise/robot_luminous.png'
+  
     },
-
     tap_robot:function(){
         console.log(this.data.flag)
         if (this.data.flag==-1) {
@@ -40,4 +40,5 @@ Page({
           url: '/pages/ideas/ideas',
         })
     }
+   
 })

@@ -1,2 +1,10 @@
 <!--pages/component/exercise/exercise.js.wxml-->
-<text style="color: aliceblue;">pages/component/exercise/exercise.js.wxml</text>
+<view class="exercise_container">
+    <view class="level">Level 1</view>
+    <view class="exercise_list">
+        <block wx:key="index" wx:for="{{num_list}}">
+            <view class="exercise_item" bindtap="toExercise">{{num_list[index]}}</view>
+        </block>    
+    </view>    
+        
+</view>

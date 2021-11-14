@@ -1,7 +1,7 @@
-<!--pages/everyday_exercise/everyday_exercise.wxml-->
+<!--pages/exercise_detail/exercise_detail.wxml-->
 <view class="e_container">
     <view class="e_container1">
-        <view class="title">每日一题</view>
+        <view class="title">练习1</view>
         <image src='{{robot_image}}' style="height: 224rpx; width: 224rpx; margin-left: 120rpx; z-index: 1;" bindtap="tap_robot"></image>
     </view>
     <view class="content-container">

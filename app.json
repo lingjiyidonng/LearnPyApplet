@@ -12,6 +12,7 @@
     "pages/my_code/my_code",
     "pages/my_star_project/my_star_project",
     "pages/my_star_course/my_star_course",
+    "pages/exercise_detail/exercise_detail",
     "pages/logs/logs"
     
   ],
