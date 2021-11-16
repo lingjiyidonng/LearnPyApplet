@@ -22,6 +22,7 @@ Component({
      * 组件的初始数据
      */
     data: {
+        index:0,
         list_num:10,
         title_name_list:[
             "机器学习","OpenCV","爬虫","语言识别","自然语言处理",
@@ -31,13 +32,24 @@ Component({
         ],
         title_item_content:[
             "Learning frameworks, libraries and software.","Basic Machine Learning and Deep Learning","Content for Udacity's Machine Learning curriculum","The 'Python Machine Learning (1st edition)' book code repository and info resource",
-        ]
+        ],
+        type_image:'https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/project/box3.png'
     },
 
     /**
      * 组件的方法列表
      */
     methods: {
-
+        choose_type(e){
+            if(e.currentTarget.dataset.index!=this.data.index){
+                this.setData({
+                    index:e.currentTarget.dataset.index,
+                    title_item_list:[
+                        ''
+                    ],
+                })
+                console.log(this.data.index)
+            }
+        }
     }
 })
