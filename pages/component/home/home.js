@@ -1,6 +1,6 @@
-// pages/component/home/home.js.js
-var app = getApp();
+// pages/component/home/home.js
 
+var app = getApp();
 Component({
 
     /* 开启全局样式设置 */
@@ -14,7 +14,8 @@ Component({
     properties: {
         name:{
             type:String,
-            value:'首页'
+            value:'首页',
+            
         }
     },
 
@@ -22,9 +23,23 @@ Component({
      * 组件的初始数据
      */
     data: {
-
+        dateTitleList: ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"],
+        date: 0,
     },
-
+    pageLifetimes: {
+        // 组件所在页面的生命周期函数
+        show: function () {
+            const util = require('../../../utils/util.js');
+            let time = util.formatTime(new Date());
+            console.log('当前日期和时间:', time)
+            this.setData({ 
+                date: time
+            })
+            
+        },
+        hide: function () { },
+        resize: function () { },
+    },
     /**
      * 组件的方法列表
      */
@@ -40,7 +55,8 @@ Component({
             wx.navigateTo({
               url: '/pages/everyday_project/everyday_project',
             })
-        }
+        },
+        
 
     },
     

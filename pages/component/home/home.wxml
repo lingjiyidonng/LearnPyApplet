@@ -1,29 +1,44 @@
 <!--pages/component/home/home.js.wxml-->
-<view class="container">
-    <view class="container1">
-        <image class="logo_image" src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/homepage/learn_py.png"></image>
-        <view class="daka">每日打卡模块</view>
+<image class="avatar" src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/homepage/learn_py.png">
+</image>
+<view class="datebox">
+    <view class="datebox-top">
+        <view class="datebox-top-title">每日打卡</view>
+        <view class="datebox-top-date">{{date}}</view>
     </view>
-    <view class="container2">
-        <button class="btn" bindtap="click1">
-            <view class="icon" >
-                <image src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/homepage/everyday_exercise.png" style="width: 82rpx; height: 90rpx;"></image>
+    <view class="datebox-weeklist">
+        <block wx:key="index" wx:for="{{dateTitleList}}">
+            <view class="datebox-weeklist-box">
+                <view class="datebox-weeklist-box-title">{{dateTitleList[index]}}</view>
+                <view class="datebox-weeklist-box-circle">1</view>
             </view>
-            <view class="text" >
-                <text>每日试题</text>
-                <text>Compute Net Amount</text>
-            </view>
-            
-        </button>
-        <button class="btn" bindtap="click2">
-            <view class="icon">
-                <image src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/homepage/everyday_project.png" style="width: 110rpx; height: 120rpx;"></image>
-            </view>
-            <view class="text" >
-                <text>每日项目</text>
-                <text>Halfish/cs231n</text>
-            </view>
-        </button>
+        </block>
     </view>
-    
+</view>
+<view class="dailybox">
+    <view class="dailybox-container1" bindtap="click1">
+        <view class="dailybox-circle1">
+            <image src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/homepage/everyday_exercise.png"
+                style="width: 70rpx; height:76rpx">
+            </image>
+        </view>
+        <view>
+            <view class="dailybox-text1">每日试题</view>
+            <view  class="dailybox-text2">Compute Net Amount</view>
+        </view>
+    </view>
+    <view class="dailybox-line"></view>
+    <view class="dailybox-container2" bindtap="click2">
+        <view class="dailybox-circle2">
+            <image src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/homepage/everyday_project.png"
+            style="width: 94rpx; height:101rpx">
+            </image>
+        </view>
+            <view>
+                <view class="dailybox-text1">每日项目</view>
+                <view  class="dailybox-text2">Halfish/cs231n</view>
+            </view>
+        
+    </view>
+
 </view>
