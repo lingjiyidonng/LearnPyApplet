@@ -1,4 +1,14 @@
 <!--pages/component/course/course.js.wxml-->
 <view class="c-container">
-  <towxml nodes="{{article}}"/>
+  <block wx:for="{{courseName}}">
+    <view class="course-box">
+      <view class="index-circle">{{index+1}}</view>
+      <view class="course-text">{{courseName[index]}}</view>
+      <view class="star-circle">
+        <image src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/collection_dark.png"
+          mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="course-line"></view>
+  </block>
 </view>
