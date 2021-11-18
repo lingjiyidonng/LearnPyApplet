@@ -1,2 +1,33 @@
-<!--pages/coding/coding.wxml-->
-<text style="color: aliceblue;">pages/coding/coding.wxml</text>
+<!--pages/course-content/course-content.wxml-->
+<view class="page-box">
+    <view class="page-header">
+        <image class="star-circle"
+            src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/collection_dark.png"></image>
+        <view class="title">{{courseTitle}}</view>
+        <image class="share-circle"
+            src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/share.png"></image>
+    </view>
+    <view class="coding-box">
+        <view class="coding-editor">
+            <view></view>
+            <view class="page-section">
+                <view class="textarea-wrp">
+                    <textarea bindinput="bind" maxlength="500" auto-focus="true" style="height: 550rpx"></textarea>
+                </view>
+            </view>
+        </view>
+        <view class="char-list">
+            <block wx:for="char-list">
+                <view class="char-box">{{charList[index]}}</view>
+            </block>
+        </view>
+    </view>
+    <image class="coding-button" src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/box_1.png"
+        bindtap="coding"></image>
+    <view class="result-box"></view>
+    <image class="coding-button"
+        src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/box_2.png"></image>
+
+</view>
+<view class="run-text">运行</view>
+<view class="upload-text">上传代码</view>

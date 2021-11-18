@@ -1,4 +1,4 @@
-// pages/coding/coding.js
+// pages/course-content/course-content.js
 Page({
 
     /**
@@ -6,18 +6,15 @@ Page({
      */
     data: {
         courseTitle: "初识Python",
-        charList: ["(",")","{","}",":",";","!","=","\\"],
-        codeInput: '',
     },
-    bindTextAreaBlur: function(e) {
-        console.log(e.detail.value)
+
+    coding: function(){
+        console.log("coding")
+        wx.navigateTo({
+            url: "../coding/coding",
+        })
     },
-    bind: function(e){
-        console.log(e.detail.value)
-        this.setData({
-            codeInput: e.detail.value
-        });
-    },
+
     /**
      * 生命周期函数--监听页面加载
      */

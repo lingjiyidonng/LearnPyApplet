@@ -1,4 +1,4 @@
-/* pages/coding/coding.wxss */
+/* pages/course-content/course-content.wxss */
 .page-box{
     position: absolute;
     left: 30rpx;
@@ -41,48 +41,10 @@
     text-align: center;
     font-family: PingFangSC-medium;
 }
-.coding-box{
+.course-box{
     margin-top: 26rpx;
     width: 630rpx;
-    height: 640rpx;
-    line-height: 40rpx;
-    border-radius: 16rpx;
-    background-color: rgba(74, 74, 98, 100);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-.coding-editor{
-    margin-top: 10rpx;
-    width: 620rpx;
-    height: 550rpx;
-    font-size: 36rpx;
-    text-align: left;
-}
-.char-list{
-    width: 620rpx;
-    height: 100rpx;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.char-box{
-    width: 64rpx;
-    height: 64rpx;
-    background-color:#CBCBCB;
-    border-radius: 24rpx;
-    text-align: center;
-    font-size: 40rpx;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.result-box{
-    margin-top: 40rpx;
-    width: 630rpx;
-    height: 242rpx;
+    height: 952rpx;
     line-height: 40rpx;
     border-radius: 24rpx;
     background-color: rgba(74, 74, 98, 100);
@@ -96,35 +58,25 @@
     height: 84rpx;
     border-radius: 24rpx;   
 }
-.run-text{
+.coding-text{
     position: absolute;
     left: 336rpx;
-    top: 830rpx;
+    top: 1142rpx;
     width: 72rpx;
     height: 52rpx;
     color: rgba(118, 103, 92, 100);
     font-size: 36rpx;
     text-align: left;
-    font-family: PingFangSC-regular;
+    font-family: PingFangSC-regular; 
 }
-.upload-text{
+.idea-text{
     position: absolute;
-    left: 302rpx;
-    top: 1240rpx;
-    width: 144rpx;
+    left: 330rpx;
+    top: 1266rpx;
+    width: 90rpx;
     height: 52rpx;
-    color: rgba(82, 73, 73, 100);
+    color: rgba(63, 53, 46, 100);
     font-size: 36rpx;
     text-align: left;
-    font-family: PingFangSC-regular;
+    font-family: PingFangSC-regular;  
 }
-textarea {
-    width: 620rpx;
-  }
-  .textarea-wrp {
-    padding: 0;
-    background-color: #fff;
-  }
-  .page-section{
-    width: 100%;
-  }
