@@ -4,7 +4,7 @@
         <button class="type_btn" bindtap="toProject">
             <view class="btn_text">项目</view>
         </button>
-        <button class="type_btn" bindtap="toCourse">
+        <button class="type_btn" style="background: url({{btn_image}});" bindtap="toCourse">
             <view class="btn_text">教程</view>
         </button>
     </view>

@@ -10,7 +10,8 @@ Page({
         ],
         title_item_content:[
             "Learning frameworks, libraries and software.","Basic Machine Learning and Deep Learning","Content for Udacity's Machine Learning curriculum","The 'Python Machine Learning (1st edition)' book code repository and info resource",
-        ]
+        ],
+        btn_image: 'https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/me/box3.png'
     },
     toProject:function(){
         wx.redirectTo({

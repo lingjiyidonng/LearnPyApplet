@@ -2,20 +2,16 @@
 <view class="p-container">
     <view class="title_name_box">
         <block wx:key="index" wx:for="{{title_name_list}}">
-            <view class="title_name" bindtap="choose_type" data-index="{{index}}">{{title_name_list[index]}}</view>
+            <view class="title_name {{index==current_index?'active':''}}" bindtap="choose_type" data-index="{{index}}">{{title_name_list[index]}}</view>
         </block>
     </view>
-    <view class="title_item_box">
-        <block wx:key="index" wx:for="{{title_item_list}}" wx:for="{{title_item_content}}">
-            <view class="fengexian"></view>
-            <view class="title_item_box_1">
-                <view class="star_icon"></view>
-                <view class="title">
-                    <view class="item_name">{{title_item_list[index]}}</view>
-                    <view class="python">python</view>
-                </view>
-            </view>
-            <view class="item_content">{{title_item_content[index]}}</view>
-        </block>
-    </view>
+    <block wx:key="index" wx:for="{{project_item}}">
+        <view class="fengexian"></view>
+        <view class="title_item_box_1" bindtap="goto_project_item">
+            <view class="star_icon {{project_item[index].is_collected==true?'collected':''}}"></view>
+            <view class="title">{{project_item[index].projectname}}</view>
+        </view>
+        <!-- <view class="item_content">{{project_item[index].projecturl}}</view> -->
+    </block>
 </view>
+<view style="height: 200rpx; color: aliceblue;" bindtap="click111">{{item[0].projectname}}</view>

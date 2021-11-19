@@ -1,36 +1,18 @@
-// pages/my_code/my_code.js
-var app = getApp()
+// pages/project/project.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        codes:[
-        ],
-        
+
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        var that = this
-        wx.request({
-            url: 'http://124.70.47.51/user/home/code',
-            method: "GET",
-            header: {
-                'Content-Type': 'application/json',
-                //'content-type': 'application/x-www-form-urlencoded'
-                'Authorization': "Bearer " + app.globalData.token
-            },
-            success(res){
-                that.setData({
-                    codes: res.data.data.codes,
-                })
-                console.log(res.data.data.codes)
-            }
-        })
+
     },
 
     /**

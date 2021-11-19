@@ -24,9 +24,9 @@
     width: 248rpx;
     height: 90rpx;
     border-radius: 24rpx;
-    border: 2rpx solid rgba(244, 139, 74, 100);
+    /* border: 2rpx solid rgba(244, 139, 74, 100); */
     line-height: 90rpx;
-    background: url('https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/me/box3.png');
+    /* background: url('https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/me/box3.png'); */
 }
 .btn_text{
     color: rgba(165, 95, 92, 100);

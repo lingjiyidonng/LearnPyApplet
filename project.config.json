@@ -9,7 +9,7 @@
         ]
     },
     "setting": {
-        "urlCheck": true,
+        "urlCheck": false,
         "es6": true,
         "enhance": true,
         "postcss": true,
@@ -48,7 +48,7 @@
     },
     "compileType": "miniprogram",
     "libVersion": "2.19.4",
-    "appid": "wx1b64559ad594f9dc",
+    "appid": "wx35b2f26deecc663b",
     "projectname": "LearnPy",
     "debugOptions": {
         "hidedInDevtools": []

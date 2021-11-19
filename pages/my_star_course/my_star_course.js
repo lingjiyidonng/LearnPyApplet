@@ -8,6 +8,7 @@ Page({
         item_title_list:[
             "初识Python","分支结构","循环结构","函数与模块"
         ],
+        btn_image: 'https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/me/box3.png'
     },
     toProject:function(){
         wx.redirectTo({
