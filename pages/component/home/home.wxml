@@ -7,10 +7,10 @@
         <view class="datebox-top-date">{{date}}</view>
     </view>
     <view class="datebox-weeklist">
-        <block wx:key="index" wx:for="{{dateTitleList}}">
+        <block wx:key="index" wx:for="{{days}}">
             <view class="datebox-weeklist-box">
-                <view class="datebox-weeklist-box-title">{{dateTitleList[index]}}</view>
-                <view class="datebox-weeklist-box-circle">1</view>
+                <view class="datebox-weeklist-box-title">{{item.week}}</view>
+                <view class="datebox-weeklist-box-circle">{{item.date}}</view>
             </view>
         </block>
     </view>
