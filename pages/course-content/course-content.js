@@ -5,7 +5,14 @@ Page({
      * 页面的初始数据
      */
     data: {
+        courseTitle: "初识Python",
+    },
 
+    coding: function(){
+        console.log("coding")
+        wx.navigateTo({
+            url: "../coding/coding",
+        })
     },
 
     /**
