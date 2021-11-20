@@ -30,11 +30,6 @@ Component({
      * 组件的方法列表
      */
     methods: {
-        courseSelect: function(e){
-            console.log(e.currentTarget.dataset.coursenum)
-            wx.navigateTo({
-                url: "../course-content/course-content",
-              })
-        }
+
     }
 })

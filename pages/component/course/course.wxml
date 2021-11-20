@@ -1,7 +1,7 @@
 <!--pages/component/course/course.js.wxml-->
 <view class="c-container">
   <block wx:for="{{courseName}}">
-    <view class="course-box" bindtap="courseSelect" data-coursenum="{{index}}">
+    <view class="course-box">
       <view class="index-circle">{{index+1}}</view>
       <view class="course-text">{{courseName[index]}}</view>
       <view class="star-circle">
