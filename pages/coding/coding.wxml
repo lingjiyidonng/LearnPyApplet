@@ -9,15 +9,12 @@
     </view>
     <view class="coding-box">
         <view class="coding-editor">
-            <view></view>
-            <view class="page-section">
-                <view class="textarea-wrp">
-                    <textarea bindinput="bind" maxlength="500" auto-focus="true" style="height: 550rpx"></textarea>
-                </view>
+            <view class="textarea-wrp">
+                <textarea bindinput="bind" maxlength="500" auto-focus="true" style="height: 550rpx" id="code" value="{{tempInput}}"></textarea>
             </view>
         </view>
         <view class="char-list">
-            <block wx:for="char-list">
+            <block wx:for="{{charList}}">
                 <view class="char-box">{{charList[index]}}</view>
             </block>
         </view>

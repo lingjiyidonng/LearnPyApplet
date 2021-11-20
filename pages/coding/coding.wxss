@@ -120,11 +120,11 @@
 }
 textarea {
     width: 620rpx;
+    background-color: rgba(74, 74, 98, 100);
+    line-height: 38rpx;
+    color: white;
+    
   }
   .textarea-wrp {
-    padding: 0;
     background-color: #fff;
-  }
-  .page-section{
-    width: 100%;
   }
