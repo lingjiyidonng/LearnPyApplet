@@ -5,9 +5,22 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        courseTitle: "初识Python",
+        charList: ["tab","(",")","{","}",":",";","!","="],
+        codeInput: '',
+        tempInput: '',
     },
-
+    bindTextAreaBlur: function(e) {
+        console.log(e.detail.value)
+    },
+    bind: function(e){
+        
+        console.log(e.detail.value)
+        this.setData({
+            codeInput: e.detail.value,
+        });
+        
+    },
     /**
      * 生命周期函数--监听页面加载
      */

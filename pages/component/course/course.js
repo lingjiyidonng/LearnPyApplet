@@ -1,4 +1,4 @@
-// pages/component/course/course.js.js
+// pages/component/course/course.js
 
 var app = getApp();
 
@@ -14,22 +14,27 @@ Component({
      */
     properties: {
         name:{
-            type:String,
-            value:'教程'
-        }
+            type: String,
+            value: '教程',
+        },
     },
 
     /**
      * 组件的初始数据
      */
     data: {
-
+        courseName: ["初始Python", "语言元素", "分支结构", "循环结构", "构造程序逻辑", "函数与模块"],
     },
 
     /**
      * 组件的方法列表
      */
     methods: {
-
+        courseSelect: function(e){
+            console.log(e.currentTarget.dataset.coursenum)
+            wx.navigateTo({
+                url: "../course-content/course-content",
+              })
+        }
     }
 })
