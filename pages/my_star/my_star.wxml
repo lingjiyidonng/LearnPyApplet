@@ -9,18 +9,14 @@
         </button>
     </view>
     <view class="title_item_box">
-        <block wx:key="index" wx:for="{{title_item_list}}" wx:for="{{title_item_content}}">
+        <block wx:key="index" wx:for="{{projects}}">
         <view class="fengexian"></view>
             <view class="title_item_box_1">
                 <view class="star_icon"></view>
-                <view class="title">
-                    <view class="item_name">{{title_item_list[index]}}</view>
-                    <view class="python">python</view>
-                </view>
+                <view class="item_name">{{projects[index].name}}</view>
             </view>
-            <view class="item_content">{{title_item_content[index]}}</view>
         
         </block>
     </view>
-    
+    <view style="height: 60rpx;" bindtap="showProjects"></view>
 </view>

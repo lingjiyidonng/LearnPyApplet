@@ -3,7 +3,7 @@
     margin-left: 34rpx;
     margin-top: 20rpx;
     width: 688rpx;
-    height: 1040rpx;
+    /* height: 1040rpx; */
     line-height: 40rpx;
     border-radius: 40rpx;
     background-color: rgba(32, 31, 47, 100);
@@ -55,9 +55,9 @@
 }
 
 .star_icon{
-    margin-left: 26rpx;
-    width: 68rpx;
-    height: 68rpx;
+    margin-left: 46rpx;
+    width: 60rpx;
+    height: 60rpx;
     border-radius: 28rpx;
     background-image: url('https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/project/collection_luminous.png');
     background-position: center;
@@ -77,7 +77,7 @@
 }
 .fengexian{
     margin-top: 10rpx;
-    margin-left: 26rpx;
+    margin-left: 8rpx;
     width: 640rpx;
     height: NaNpx;
     border: 1rpx solid rgba(187, 187, 187, 100);

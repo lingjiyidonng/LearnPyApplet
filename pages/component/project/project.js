@@ -112,27 +112,21 @@ Component({
             console.log("当前project_item列表：")
             console.log(this.data.project_item)
         },
-        goto_project_item:function () {
-            wx.showModal({
-                title: '项目链接',
-                content: this.data.project_item[0].projecturl,
-                showCancel: false,
-                confirmText:"确定",//默认是“确定”
-                confirmColor: 'skyblue',//确定文字的颜色
-                success: function (res) {
-                   if (res.cancel) {
-                      //点击取消,默认隐藏弹框
-                   } else {
-                      //点击确定
-                      temp.splice(index, 1),
-                      that.setData({
-                         tempFilePaths: temp,
-                      })
-                   }
-                },
-                fail: function (res) { },//接口调用失败的回调函数
-                complete: function (res) { },//接口调用结束的回调函数（调用成功、失败都会执行）
-             })
+        
+        copy_url:function (e) {
+            // 传递的参数
+            let temp = e.currentTarget.dataset['index'];
+            var that = this;
+            wx.setClipboardData({
+              data: that.data.project_item[temp].projecturl,
+              success(res){
+                  wx.showToast({
+                    title: '复制成功',
+                  })
+                  console.log(that.data.project_item[temp].projecturl)
+              }
+            })
+            
         }
     },
     

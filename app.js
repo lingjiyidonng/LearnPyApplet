@@ -25,13 +25,13 @@ App({
               code: res.code,
             },
             success(res){
-              //console.log(res.data.data.token)
+              //console.log(res)
               that.globalData.token = res.data.data.token;
               console.log(that.globalData.token)  //拿到后将token存入全局变量  以便其他页面使用
             }
 
           })
-          
+          //console.log(this.globalData.token)
           //res = JSON.parse(res); //字符串转为对象 JSON字符串->JSON对象
           //res = JSON.stringify(res) //对象->字符串
         }else{
