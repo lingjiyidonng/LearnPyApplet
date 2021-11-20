@@ -1,11 +1,11 @@
 <!--pages/my_code/my_code.wxml-->
 
 <view class="my_code_container">
-    <block wx:key="index" wx:for="{{date_list}}" wx:for="{{title_list}}">
+    <block wx:key="index" wx:for="{{codes}}">
         <view class="my_code_item">
-            <view class="date">{{date_list[index]}}</view>
+            <view class="date">{{codes[index].codeid}}</view>
             <view class="fengexian"></view>
-            <view class="title">{{title_list[index]}}</view>
+            <view class="title">{{codes[index].dt}}</view>
         </view>
         
         </block>

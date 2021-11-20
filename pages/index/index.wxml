@@ -1,5 +1,1 @@
-<tabbar>
-    
-</tabbar>
-
-
+<towxml nodes="{{content}}"/>

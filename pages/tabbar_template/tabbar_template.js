@@ -28,14 +28,15 @@ Page({
     ]
       },
     goto(e){
-    if(e.currentTarget.dataset.index!=this.data.index){
+      if(e.currentTarget.dataset.index!=this.data.index){
         this.setData({
         index:e.currentTarget.dataset.index
         })
-    }
+      }
+      
     },  
     onLoad: function (option) {
-
+      
     }
     
 })

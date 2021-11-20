@@ -1,28 +1,28 @@
 {
-    "pages": [
-        
-        "pages/index/index",
-        "pages/tabbar_template/tabbar_template",
-        "pages/me/me",
-        "pages/everyday_exercise/everyday_exercise",
-        "pages/everyday_project/everyday_project",
-        
-        "pages/ideas/ideas",
-        "pages/my_star/my_star",
-        "pages/my_code/my_code",
-        "pages/my_star_project/my_star_project",
-        "pages/my_star_course/my_star_course",
-        "pages/exercise_detail/exercise_detail",
-        "pages/course-content/course-content",
-        "pages/coding/coding",
-        "pages/logs/logs"
-        
-    ],
-    "window": {
-        "backgroundTextStyle": "dark",
-        "navigationBarBackgroundColor": "#000",
-        "navigationBarTitleText": "学派",
-        "navigationBarTextStyle": "white"
-    },
-    "sitemapLocation": "sitemap.json"
+  "pages": [
+      
+      "pages/index/index",
+      "pages/tabbar_template/tabbar_template",
+      "pages/me/me",
+      "pages/everyday_exercise/everyday_exercise",
+      "pages/everyday_project/everyday_project",
+      
+      "pages/ideas/ideas",
+      "pages/my_star/my_star",
+      "pages/my_code/my_code",
+      "pages/my_star_project/my_star_project",
+      "pages/my_star_course/my_star_course",
+      "pages/exercise_detail/exercise_detail",
+      "pages/course-content/course-content",
+      "pages/coding/coding",
+      "pages/logs/logs"
+      
+  ],
+  "window": {
+      "backgroundTextStyle": "dark",
+      "navigationBarBackgroundColor": "#000",
+      "navigationBarTitleText": "学派",
+      "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json"
 }

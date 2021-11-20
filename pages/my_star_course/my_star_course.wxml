@@ -4,19 +4,19 @@
         <button class="type_btn" bindtap="toProject">
             <view class="btn_text">项目</view>
         </button>
-        <button class="type_btn" bindtap="toCourse">
+        <button class="type_btn" style="background: url({{btn_image}});" bindtap="toCourse">
             <view class="btn_text">教程</view>
         </button>
     </view>
-    <view class="fengexian"></view>
     <view class="title_item_box">
-        <block wx:key="index" wx:for="{{item_title_list}}">
+        <block wx:key="index" wx:for="{{courses}}">
+            <view class="fengexian"></view>
             <view class="item">
                 <view class="star_icon"></view>
-                <view class="item_title_name">{{item_title_list[index]}}</view>
+                <view class="item_title_name">{{courses[index].title}}</view>
             </view>
-            <view class="fengexian"></view>
+            
         </block>
     </view>
-    
+    <view style="height: 50rpx;"></view>
 </view>
