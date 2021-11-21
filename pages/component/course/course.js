@@ -17,13 +17,14 @@ Component({
             type: String,
             value: '教程',
         },
+        courselist: '',
     },
 
     /**
      * 组件的初始数据
      */
     data: {
-        courselist: '',
+        
     },
     lifetimes:{
         attached:  function () {
@@ -92,6 +93,33 @@ Component({
                 url: "../course-content/course-content?courseid=" + e.currentTarget.dataset.courseid,
               })
         },
+        nocollection: function (e) {
+            var that = this;
+            var temp = e.currentTarget.dataset.courseid;
+            console.log(e.currentTarget.dataset.courseid)
+            wx.request({
+                url: "http://124.70.47.51/user/course/collect",
+                method: "delete",
+                header: {
+                    "content-type": "application/json",
+                    "Authorization": "Bearer " + app.globalData.token
+                },
+                data: {
+                    "courseid": temp,
+                },
+                success: function (res) {
+                    // console.log(that.data.course)
+                    var tempcourselist = that.data.courselist;
+                    tempcourselist[e.currentTarget.dataset.courseid - 1].is_collect = false;
+                    console.log(tempcourselist)
+                    that.setData({
+                        courselist: tempcourselist,
+                    })
+    
+    
+                }
+            })
+        },
         collection: function(e){
             var that = this;
             var temp = e.currentTarget.dataset.courseid;
@@ -108,20 +136,12 @@ Component({
                 },
                 success: function (res) {
                     console.log(res.data)
-                    // wx.request({
-                    //     url: "http://124.70.47.51/user/course/getlist",
-                    //     method: "GET",
-                    //     header: {
-                    //         "content-type": "application/json",
-                    //         "Authorization": "Bearer " + app.globalData.token
-                    //     },
-                    //     success: function (res) {
-                    //         console.log(res.data.data.courselist)
-                    //         that.setData({
-                    //             courselist: res.data.data.courselist
-                    //         })
-                    //     }
-                    // })
+                    var tempcourselist = that.data.courselist;
+                    tempcourselist[e.currentTarget.dataset.courseid - 1].is_collect = true;
+                    console.log(tempcourselist)
+                    that.setData({
+                        courselist: tempcourselist,
+                    })
                     
                 }
             })
