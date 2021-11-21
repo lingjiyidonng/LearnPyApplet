@@ -45,7 +45,7 @@
     margin-top: 26rpx;
     width: 630rpx;
     height: 640rpx;
-    line-height: 40rpx;
+    line-height: 40rpx; 
     border-radius: 16rpx;
     background-color: rgba(74, 74, 98, 100);
     text-align: center;
@@ -60,6 +60,7 @@
     height: 550rpx;
     font-size: 36rpx;
     text-align: left;
+     
 }
 .char-list{
     width: 620rpx;

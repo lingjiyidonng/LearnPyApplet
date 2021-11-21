@@ -1,5 +1,6 @@
 {
   "pages": [
+      
       "pages/tabbar_template/tabbar_template",
       "pages/index/index",
       "pages/me/me",
