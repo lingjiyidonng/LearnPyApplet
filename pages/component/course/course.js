@@ -87,10 +87,44 @@ Component({
      */
     methods: {
         courseSelect: function(e){
-            console.log(e.currentTarget.dataset.coursenum)
+            console.log(e.currentTarget.dataset.courseid)
             wx.navigateTo({
-                url: "../course-content/course-content",
+                url: "../course-content/course-content?courseid=" + e.currentTarget.dataset.courseid,
               })
+        },
+        collection: function(e){
+            var that = this;
+            var temp = e.currentTarget.dataset.courseid;
+            console.log(e.currentTarget.dataset.courseid)
+            wx.request({
+                url: "http://124.70.47.51/user/course/collect",
+                method: "post",
+                header: {
+                    "content-type": "application/json",
+                    "Authorization": "Bearer " + app.globalData.token
+                },
+                data: {
+                    "courseid": temp,
+                },
+                success: function (res) {
+                    console.log(res.data)
+                    // wx.request({
+                    //     url: "http://124.70.47.51/user/course/getlist",
+                    //     method: "GET",
+                    //     header: {
+                    //         "content-type": "application/json",
+                    //         "Authorization": "Bearer " + app.globalData.token
+                    //     },
+                    //     success: function (res) {
+                    //         console.log(res.data.data.courselist)
+                    //         that.setData({
+                    //             courselist: res.data.data.courselist
+                    //         })
+                    //     }
+                    // })
+                    
+                }
+            })
         }
     }
 })

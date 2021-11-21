@@ -2,17 +2,27 @@
 <view class="c-container">
   <block wx:for="{{courselist}}" wx:key="index">
     <view class="top-box">
-      <view class="box-front" bindtap="courseSelect">
-        <view class="course-box" data-coursenum="{{index}}">
+      <view class="box-front" bindtap="courseSelect" data-courseid="{{item.courseid}}">
+        <view class="course-box">
           <view class="index-circle">{{item.courseid}}</view>
           <view class="course-text">{{item.title}}</view>
         </view>
       </view>
-      <view class="box-back" bindtap="collection">
-        <view class="star-circle" >
-          <image src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/collection_dark.png"
-            mode="widthFix"></image>
+      <view class="box-back" bindtap="collection" data-courseid="{{item.courseid}}">
+
+
+        <view wx:if="{{!item.is_collect}}">
+          <image class="star-circle"
+            src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/collection_dark.png"
+            mode="widthFix">
+          </image>
         </view>
+        <view wx:else>
+          <image class="star-circle" src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/collection_luminous.png"
+            mode="widthFix">
+          </image>
+        </view>
+
       </view>
     </view>
 

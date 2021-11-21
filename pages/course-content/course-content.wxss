@@ -80,3 +80,14 @@
     text-align: left;
     font-family: PingFangSC-regular;  
 }
+.scroll-list {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.page-section {
+    flex: 1;
+    overflow: hidden;
+}
