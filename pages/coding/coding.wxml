@@ -1,8 +1,16 @@
 <!--pages/course-content/course-content.wxml-->
 <view class="page-box">
     <view class="page-header">
-        <image class="star-circle"
-            src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/collection_dark.png"></image>
+        <view wx:if="{{is_collect}}">
+            <image class="star-circle" bindtap="nocollection"
+                src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/collection_luminous.png">
+            </image>
+        </view>
+        <view wx:else>
+            <image class="star-circle" bindtap="collection"
+                src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/collection_dark.png">
+            </image>
+        </view>
         <view class="title">{{courseTitle}}</view>
         <image class="share-circle"
             src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/share.png"></image>
@@ -10,11 +18,12 @@
     <view class="coding-box">
         <view class="coding-editor">
             <view class="textarea-wrp">
-                <textarea bindinput="bind" maxlength="500" auto-focus="true" style="height: 550rpx" id="code" value="{{tempInput}}"></textarea>
+                <textarea bindinput="bind" maxlength="500" auto-focus="true" style="height: 550rpx" id="code"
+                    value="{{tempInput}}"></textarea>
             </view>
         </view>
         <view class="char-list">
-            <block wx:for="{{charList}}">
+            <block wx:for="{{charList}}" wx:key="indexs">
                 <view class="char-box">{{charList[index]}}</view>
             </block>
         </view>

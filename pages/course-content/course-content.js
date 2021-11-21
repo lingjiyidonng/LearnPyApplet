@@ -9,15 +9,14 @@ Page({
         isLoading: true,
         courseTitle: "初识Python",
         course: '',
-        is_collect: '',
-        content: {},
-        str: '',
+        is_collect: false,
     },
 
     coding: function () {
         console.log("coding")
+        var that = this;
         wx.navigateTo({
-            url: "../coding/coding",
+            url: "../coding/coding?courseid=" + that.data.course.courseid + "&iscollect=" + that.data.is_collect + "&title=" + that.data.course.title,
         })
     },
     collection: function () {
@@ -88,6 +87,7 @@ Page({
                     course: res.data.data.course,
                     is_collect: res.data.data.course.is_collect,
                 })
+                console.log(res.data.data.course.is_collect)
                 wx.request({
                     url: res.data.data.course.coursedetail,
                     method: "GET",
