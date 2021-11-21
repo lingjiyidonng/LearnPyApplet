@@ -23,9 +23,65 @@ Component({
      * 组件的初始数据
      */
     data: {
-        courseName: ["初始Python", "语言元素", "分支结构", "循环结构", "构造程序逻辑", "函数与模块"],
+        courselist: '',
     },
-
+    lifetimes:{
+        attached:  function () {
+            
+            
+        },
+    },
+    pageLifetimes: {
+        // 组件所在页面的生命周期函数
+        show: function () {
+            // 登录
+            wx.login({
+                success: res => {
+                    var that = this
+                    // 发送 res.code 到后台换取 openId, sessionKey, unionId
+                    if (res.code) {
+                        wx.request({
+                            url: 'http://124.70.47.51/user/login',
+                            method: "POST",
+                            header: {
+                                'Content-Type': 'application/json',
+                                //'content-type': 'application/x-www-form-urlencoded'
+                            },
+                            data: {
+                                code: res.code,
+                            },
+                            success(res) {
+                                //console.log(res)
+                                app.globalData.token = res.data.data.token;
+                                // console.log(app.globalData.token) //拿到后将token存入全局变量  以便其他页面使用
+                                wx.request({
+                                    url: "http://124.70.47.51/user/course/getlist",
+                                    method: "GET",
+                                    header: {
+                                        "content-type": "application/json",
+                                        "Authorization": "Bearer " + app.globalData.token
+                                    },
+                                    success: function (res) {
+                                        console.log(res.data.data.courselist)
+                                        that.setData({
+                                            courselist: res.data.data.courselist
+                                        })
+                                    }
+                                })
+                            }
+                        })
+                        //console.log(this.globalData.token)
+                        //res = JSON.parse(res); //字符串转为对象 JSON字符串->JSON对象
+                        //res = JSON.stringify(res) //对象->字符串
+                    } else {
+                        console.log('登陆失败')
+                    }
+                }
+            })
+        },
+        hide: function () {},
+        resize: function () {},
+    },
     /**
      * 组件的方法列表
      */
