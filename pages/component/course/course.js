@@ -17,6 +17,7 @@ Component({
             type: String,
             value: '教程',
         },
+        
     },
 
     /**
@@ -35,6 +36,10 @@ Component({
             wx.navigateTo({
                 url: "../course-content/course-content",
               })
-        }
-    }
+        },
+
+        
+    },
+
+    
 })

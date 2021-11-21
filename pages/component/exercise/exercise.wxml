@@ -1,10 +1,26 @@
 <!--pages/component/exercise/exercise.js.wxml-->
 <view class="exercise_container">
+    <view style="color: aliceblue; margin-top: 15rpx; margin-left: 20rpx; font-size: 26rpx;">长按题号可标记题目</view>
+
     <view class="level">Level 1</view>
     <view class="exercise_list">
-        <block wx:key="index" wx:for="{{num_list}}">
-            <view class="exercise_item" bindtap="toExercise">{{num_list[index]}}</view>
+        <block wx:key="index" wx:for="{{problem_list}}" wx:if="{{problem_list[index].problemid==1}}">
+            <view class="exercise_item {{problem_list[index].is_solve==true?'solved':''}}" bindtap="toExercise" bindlongpress="star_delete" data-id="{{index}}">{{problem_list[index].problemid}}</view>
         </block>    
-    </view>    
-        
+    </view>
+
+    <view class="level">Level 2</view>
+    <view class="exercise_list">
+        <block wx:key="index" wx:for="{{problem_list}}" wx:if="{{problem_list[index].problemid==2}}">
+            <view class="exercise_item {{problem_list[index].is_solve==true?'solved':''}}" bindtap="toExercise" bindlongpress="star_delete" data-id="{{index}}">{{problem_list[index].problemid}}</view>
+        </block>    
+    </view>
+
+    <view class="level">Level 3</view>
+    <view class="exercise_list">
+        <block wx:key="index" wx:for="{{problem_list}}" wx:if="{{problem_list[index].problemid==3}}">
+            <view class="exercise_item {{problem_list[index].is_solve==true?'solved':''}}" bindtap="toExercise" bindlongpress="star_delete" data-id="{{index}}">{{problem_list[index].problemid}}</view>
+        </block>    
+    </view>
+    <view style="height: 20rpx;"></view>
 </view>

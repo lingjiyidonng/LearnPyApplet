@@ -8,7 +8,7 @@
     <block wx:key="index" wx:for="{{project_item}}">
         <view class="fengexian"></view>
         <view class="title_item_box_1">
-            <view class="star_icon {{project_item[index].is_collected==true?'collected':''}}"></view>
+            <view class="star_icon {{project_item[index].is_collected==true?'collected':''}}" bindtap="star_delete" data-id="{{index}}"></view>
             <view class="title" bindtap="copy_url" data-index="{{index}}">{{project_item[index].projectname}}</view>
         </view>
         <!-- <view class="item_content">{{project_item[index].projecturl}}</view> -->

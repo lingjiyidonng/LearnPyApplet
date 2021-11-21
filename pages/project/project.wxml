@@ -1,2 +1,4 @@
 <!--pages/project/project.wxml-->
-<text>pages/project/project.wxml</text>
+<view>
+  <component_project/>
+</view>
