@@ -4,7 +4,7 @@
     left: 30rpx;
     top: 0rpx;
     width: 688rpx;
-    height: 1350rpx;
+    height: 1360rpx;
     line-height: 40rpx;
     border-radius: 40rpx;
     background-color: rgba(32, 31, 47, 100);
@@ -44,7 +44,7 @@
 .coding-box{
     margin-top: 26rpx;
     width: 630rpx;
-    height: 640rpx;
+    height: 740rpx;
     line-height: 40rpx; 
     border-radius: 16rpx;
     background-color: rgba(74, 74, 98, 100);
@@ -57,8 +57,8 @@
 .coding-editor{
     margin-top: 10rpx;
     width: 620rpx;
-    height: 550rpx;
-    font-size: 36rpx;
+    height: 650rpx;
+    font-size: 40rpx;
     text-align: left;
      
 }
@@ -81,7 +81,6 @@
     align-items: center;
 }
 .result-box{
-    margin-top: 40rpx;
     width: 630rpx;
     height: 242rpx;
     line-height: 40rpx;
@@ -90,7 +89,8 @@
     text-align: center;
 }
 .coding-button{
-    margin-top: 40rpx;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
     left: 116rpx;
     top: 1300rpx;
     width: 512rpx;
@@ -100,7 +100,7 @@
 .run-text{
     position: absolute;
     left: 336rpx;
-    top: 830rpx;
+    top: 910rpx;
     width: 72rpx;
     height: 52rpx;
     color: rgba(118, 103, 92, 100);
@@ -111,7 +111,7 @@
 .upload-text{
     position: absolute;
     left: 302rpx;
-    top: 1240rpx;
+    top: 1270rpx;
     width: 144rpx;
     height: 52rpx;
     color: rgba(82, 73, 73, 100);
@@ -121,6 +121,7 @@
 }
 textarea {
     width: 620rpx;
+    height: 630rpx;
     background-color: rgba(74, 74, 98, 100);
     line-height: 38rpx;
     color: white;

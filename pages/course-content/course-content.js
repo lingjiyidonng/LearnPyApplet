@@ -72,7 +72,24 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        var temp = options.courseid;
+        // var temp = options.courseid;
+        this.setData({
+            courseid: options.courseid,
+        })
+        
+    },
+
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
+    onReady: function () {
+
+    },
+
+    /**
+     * 生命周期函数--监听页面显示
+     */
+    onShow: function () {
         var that = this;
         wx.request({
             url: "http://124.70.47.51/user/course",
@@ -82,14 +99,14 @@ Page({
                 "Authorization": "Bearer " + app.globalData.token
             },
             data: {
-                "courseid": temp,
+                "courseid": that.data.courseid,
             },
             success: function (res) {
                 console.log(res.data.data.course)
                 that.setData({
                     course: res.data.data.course,
                     is_collect: res.data.data.course.is_collect,
-                    courseid: options.courseid,
+                    courseid: that.data.courseid,
                 })
                 // console.log(res.data.data.course.is_collect)
                 wx.request({
@@ -121,39 +138,6 @@ Page({
                         });
                     }
                 })
-            }
-        })
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-        var that = this;
-        wx.request({
-            url: "http://124.70.47.51/user/course",
-            method: "GET",
-            header: {
-                "content-type": "application/json",
-                "Authorization": "Bearer " + app.globalData.token
-            },
-            data: {
-                "courseid": that.data.courseid,
-            },
-            success: function (res) {
-                console.log(res.data.data.course)
-                that.setData({
-                    course: res.data.data.course,
-                    is_collect: res.data.data.course.is_collect,
-                })
-                // console.log(res.data.data.course.is_collect)
             }
         })
     },

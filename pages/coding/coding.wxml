@@ -18,21 +18,20 @@
     <view class="coding-box">
         <view class="coding-editor">
             <view class="textarea-wrp">
-                <textarea bindinput="bind" maxlength="500" auto-focus="true" style="height: 550rpx" id="code"
+                <textarea bindblur="getcursor" bindinput="bind"  maxlength="500" auto-focus="true" id="code"
                     value="{{tempInput}}"></textarea>
             </view>
         </view>
         <view class="char-list">
-            <block wx:for="{{charList}}" wx:key="indexs">
-                <view class="char-box">{{charList[index]}}</view>
+            <block wx:for="{{charList}}" wx:key="index">
+                <view class="char-box" data-charindex="{{index}}" bindtap="addChar" >{{charList[index]}}</view>
             </block>
         </view>
     </view>
     <image class="coding-button" src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/box_1.png"
-        bindtap="coding"></image>
-    <view class="result-box"></view>
-    <image class="coding-button"
-        src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/box_2.png"></image>
+        bindtap="run"></image>
+    <view class="result-box"><text>{{result}}</text></view>
+    <image class="coding-button" src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/box_2.png" bindtap="upload"></image>
 
 </view>
 <view class="run-text">运行</view>
