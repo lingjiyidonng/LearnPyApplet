@@ -6,11 +6,11 @@ Page({
      * 页面的初始数据
      */
     data: {
-        courseTitle: "初识Python",
         charList: ["tab","[","]","{","}","<",">","+","="],
         codeInput: '',
         tempInput: '',
         courseid: '',
+        course: '',
         is_collect: '',
         
     },
@@ -44,7 +44,7 @@ Page({
                 that.setData({
                     is_collect: true,
                 })
-
+                console.log(that.data.is_collect)
 
             }
         })
@@ -67,6 +67,7 @@ Page({
                 that.setData({
                     is_collect: false,
                 })
+                console.log(that.data.is_collect)
 
 
             }
@@ -76,13 +77,27 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        var temp = options.courseid;
         var that = this;
-        that.setData({
-            courseTitle: options.title,
-            courseid: options.courseid,
-            is_collect:  options.iscollect,
+        wx.request({
+            url: "http://124.70.47.51/user/course",
+            method: "GET",
+            header: {
+                "content-type": "application/json",
+                "Authorization": "Bearer " + app.globalData.token
+            },
+            data: {
+                "courseid": temp,
+            },
+            success: function (res) {
+                console.log(res.data.data.course.is_collect)
+                that.setData({
+                    courseid: options.courseid,
+                    course: res.data.data.course,
+                    is_collect: res.data.data.course.is_collect,
+                })
+            }
         })
-        console.log(that.data.is_collect)
     },
 
     /**

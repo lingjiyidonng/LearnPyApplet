@@ -10,6 +10,7 @@ Page({
         courseTitle: "初识Python",
         course: '',
         is_collect: false,
+        courseid: '',
     },
 
     coding: function () {
@@ -37,6 +38,7 @@ Page({
                 that.setData({
                     is_collect: true,
                 })
+                console.log(that.data.is_collect)
 
 
             }
@@ -60,6 +62,7 @@ Page({
                 that.setData({
                     is_collect: false,
                 })
+                console.log(that.data.is_collect)
 
 
             }
@@ -86,8 +89,9 @@ Page({
                 that.setData({
                     course: res.data.data.course,
                     is_collect: res.data.data.course.is_collect,
+                    courseid: options.courseid,
                 })
-                console.log(res.data.data.course.is_collect)
+                // console.log(res.data.data.course.is_collect)
                 wx.request({
                     url: res.data.data.course.coursedetail,
                     method: "GET",
@@ -100,7 +104,7 @@ Page({
                         that.setData({
                             str: res.data,
                         })
-                        console.log(that.data.str)
+                        // console.log(that.data.str)
                         let result = app.towxml(that.data.str, 'markdown', {
                             base: 'http://', // 相对资源的base路径，可以省略
                             theme: 'dark', // 主题，默认`light`，可以省略
@@ -132,7 +136,26 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        var that = this;
+        wx.request({
+            url: "http://124.70.47.51/user/course",
+            method: "GET",
+            header: {
+                "content-type": "application/json",
+                "Authorization": "Bearer " + app.globalData.token
+            },
+            data: {
+                "courseid": that.data.courseid,
+            },
+            success: function (res) {
+                console.log(res.data.data.course)
+                that.setData({
+                    course: res.data.data.course,
+                    is_collect: res.data.data.course.is_collect,
+                })
+                // console.log(res.data.data.course.is_collect)
+            }
+        })
     },
 
     /**
