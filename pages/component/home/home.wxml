@@ -10,7 +10,19 @@
         <block wx:key="index" wx:for="{{days}}">
             <view class="datebox-weeklist-box">
                 <view class="datebox-weeklist-box-title">{{item.week}}</view>
+
                 <view class="datebox-weeklist-box-circle">{{item.date}}</view>
+
+                <view wx:if="{{index!=3}}">
+                    <view wx:if="{{item.is_sign}}" class="on-circle">{{item.date}}</view>
+                    <view wx:else class="datebox-weeklist-box-circle">{{item.date}}</view>
+                </view>
+                <view wx:else>
+                    <view class="today-circle">{{item.date}}</view>
+                </view>
+                
+                
+
             </view>
         </block>
     </view>

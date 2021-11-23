@@ -81,6 +81,39 @@
     justify-content: space-around;
     align-items: center;
 }
+.on-circle{
+    width: 68rpx;
+    height: 68rpx;
+    line-height: 40rpx;
+    background-color: rgba(74, 74, 98, 100);
+    color: rgba(244, 242, 242, 100);
+    font-size: 28rpx;
+    text-align: center;
+    font-family: Arial;
+    border-radius: 100rpx;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-around;
+    align-items: center;
+    border: 2px solid rgba(247, 94, 94, 100);
+}
+
+.today-circle{
+    width: 68rpx;
+    height: 68rpx;
+    line-height: 40rpx;
+    background-color: rgba(253, 161, 95, 100);
+    color: rgba(0, 0, 0, 1);    
+    font-size: 28rpx;
+    text-align: center;
+    font-family: Arial;
+    border-radius: 100rpx;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-around;
+    align-items: center;
+}
+
 .dailybox{
     position: absolute;
     left: 30rpx;

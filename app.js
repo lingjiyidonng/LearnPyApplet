@@ -5,16 +5,19 @@ App({
   globalData: {
     token: '',
     userInfo: null,
+
     checkLogin: false,
     problem_list:[
 
     ]
+
   },
   onLaunch() {
     // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+
     console.log("app luanch")
     // 登录
     wx.login({
@@ -51,4 +54,10 @@ App({
   onLoad(){
     
   }
+
+
+    
+    
+  },
+  
 })

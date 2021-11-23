@@ -58,10 +58,10 @@ Page({
       
     },  
     onLoad: function (option) {
+
       console.log("onload")
       
     },
 
-    
     
 })
