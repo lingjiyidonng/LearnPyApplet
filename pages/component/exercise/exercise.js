@@ -90,9 +90,12 @@ Component({
      * 组件的方法列表
      */
     methods: {
-        toExercise:function(){
+        toExercise:function(e){
+            console.log("go to exercise detail")
+            var that = this
+            var t = that.data.problem_list[e.currentTarget.dataset.id]
             wx.navigateTo({
-              url: '/pages/exercise_detail/exercise_detail',
+              url: "/pages/exercise_detail/exercise_detail?problemid=" + t.problemid
             })
         },
 

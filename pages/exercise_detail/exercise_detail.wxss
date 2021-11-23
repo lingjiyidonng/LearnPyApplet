@@ -70,10 +70,16 @@
 .content{
     margin-top: 22rpx;
     width: 540rpx;
-    height: 600rpx;
     display: flex;
     margin-left: 5%;
     margin-right: 5%;
+    color: #FFFFFF;
+}
+.question_content{
+    margin-top: 10rpx;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: left;
 }
 .btn_1{
     margin-top: 40rpx;
