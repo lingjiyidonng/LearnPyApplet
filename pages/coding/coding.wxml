@@ -18,21 +18,42 @@
     <view class="coding-box">
         <view class="coding-editor">
             <view class="textarea-wrp">
-                <textarea bindblur="getcursor" bindinput="bind"  maxlength="500" auto-focus="true" id="code"
+                <textarea bindblur="getcursor" bindinput="bind" maxlength="500" auto-focus="true" id="code"
                     value="{{tempInput}}"></textarea>
             </view>
         </view>
         <view class="char-list">
             <block wx:for="{{charList}}" wx:key="index">
-                <view class="char-box" data-charindex="{{index}}" bindtap="addChar" >{{charList[index]}}</view>
+                <view class="char-box" data-charindex="{{index}}" bindtap="addChar">{{charList[index]}}</view>
             </block>
         </view>
     </view>
     <image class="coding-button" src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/box_1.png"
         bindtap="run"></image>
-    <view class="result-box"><text>{{result}}</text></view>
-    <image class="coding-button" src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/box_2.png" bindtap="upload"></image>
+    <!-- <view class="result-box"><text>{{result}}</text></view> -->
+    <view class="result-box">
+        <view class="scroll-list">
+            <scroll-view class="page-section" scroll-y="ture" scroll-x="ture">
+                <text class="result-text">{{result}}</text>
+            </scroll-view>
+        </view>
+    </view>
+
+    <image class="coding-button" src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/box_2.png"
+        bindtap="upload"></image>
 
 </view>
-<view class="run-text">运行</view>
-<view class="upload-text">上传代码</view>
+<view class="run-text" bindtap="run">运行</view>
+<view class="upload-text" bindtap="upload">上传代码</view>
+
+
+
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}" ></view>
+
+<view class="modalDlg" wx:if="{{showModal}}">
+    <textarea class="idea-box" value="{{ideaInput}}" bindinput="getidea" placeholder="输出代码描述" />
+    <view class="button-line">
+        <view bindtap="cancel" class="cancel">取消</view>
+        <view bindtap="submit" class="submit">提交</view>
+    </view>
+</view>

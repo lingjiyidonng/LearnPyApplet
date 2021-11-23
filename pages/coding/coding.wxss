@@ -83,10 +83,13 @@
 .result-box{
     width: 630rpx;
     height: 242rpx;
-    line-height: 40rpx;
     border-radius: 24rpx;
+    font-size: 40rpx;
+    text-align: left;
     background-color: rgba(74, 74, 98, 100);
-    text-align: center;
+    line-height: 38rpx;
+    color: white;
+    flex-direction: flex;
 }
 .coding-button{
     margin-top: 20rpx;
@@ -130,3 +133,90 @@ textarea {
   .textarea-wrp {
     background-color: #fff;
   }
+  .scroll-list {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
+}
+
+.page-section {
+    flex: 1;
+    overflow: hidden;
+}
+
+
+.mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 10;
+    opacity: 0.7;
+   }
+    
+   .modalDlg{
+    position: fixed;
+    z-index: 100;  
+    top: 286rpx;
+    left: 50rpx;
+    width: 630rpx;
+    height: 676rpx;
+    line-height: 40rpx;
+    border-radius: 24rpx;
+    background-color: rgba(74, 74, 98, 100);
+    border: 10rpx solid rgba(158, 158, 167, 100);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+   }
+   .idea-box{
+    width: 540rpx;
+    height: 388rpx;
+    line-height: 46rpx;
+    border-radius: 24rpx;
+    background-color: rgba(240, 239, 239, 100);
+    color: rgba(136, 136, 136, 100);
+    font-size: 36rpx;
+    text-align: left;
+    font-family: Microsoft Yahei;
+    border: 2rpx solid rgba(187, 187, 187, 100); 
+   }
+   .button-line{
+    width: 600rpx;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+   }
+   .cancel{
+    width: 186rpx;
+    height: 90rpx;
+    line-height: 52rpx;
+    border-radius: 24rpx;
+    background-color: rgba(118, 155, 232, 100);
+    color: rgba(250, 250, 250, 100);
+    font-size: 36rpx;
+    font-family: Arial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   .submit{
+    width: 186rpx;
+    height: 90rpx;
+    line-height: 52rpx;
+    border-radius: 24rpx;
+    background-color: rgba(253, 151, 95, 100);
+    color: rgba(255, 255, 255, 100);
+    font-size: 36rpx;
+    font-family: Arial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }

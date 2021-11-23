@@ -15,6 +15,58 @@ Page({
         cursor: 0,
         file: '',
         result: '',
+        ideaInput: '',
+        showModal: false,
+
+    },
+    upload: function () {
+        this.setData({
+            showModal: true
+        })
+    },
+
+    preventTouchMove: function () {
+
+    },
+
+
+    cancel: function () {
+        this.setData({
+            showModal: false
+        })
+    },
+    submit: function () {
+        var that = this;
+        wx.request({
+            url: "http://124.70.47.51/user/code/commit",
+            method: "post",
+            header: {
+                "content-type": "application/json",
+                "Authorization": "Bearer " + app.globalData.token
+            },
+            data: {
+                "codeid": that.data.file.filename,
+                "courseid": that.data.courseid,
+                "describe": that.data.ideaInput,
+                "username": app.globalData.userInfo.nickName,
+                "avatar": app.globalData.userInfo.avatarUrl,
+            },
+            success: function (res) {
+                
+                console.log(res.data)
+                console.log(that.data.file.filename)
+                console.log(that.data.courseid)
+                console.log(that.data.ideaInput)
+                console.log(app.globalData.userInfo.nickName)
+                console.log(app.globalData.userInfo.avatarUrl)
+                
+                
+                
+            }
+        })
+        this.setData({
+            showModal: false
+        })
 
     },
     bindTextAreaBlur: function (e) {
@@ -108,9 +160,6 @@ Page({
             }
         })
     },
-    upload: function () {
-
-    },
     run: function () {
         const fs = wx.getFileSystemManager();
         var that = this;
@@ -131,13 +180,13 @@ Page({
             },
             formData: null,
             success: function (res) {
-                
+
                 var data = JSON.parse(res.data)
-                console.log(data.data) 
+                console.log(data.data)
                 that.setData({
                     file: data.data,
                 })
-                
+
                 wx.request({
                     url: "http://124.70.47.51/user/code/run",
                     method: "post",
@@ -145,16 +194,16 @@ Page({
                         "content-type": "application/json",
                         "Authorization": "Bearer " + app.globalData.token
                     },
-                    data:{
-                        "codefile": that.data.file.filename, 
+                    data: {
+                        "codefile": that.data.file.filename,
                     },
                     success: function (res) {
                         console.log(res.data)
                         var str = '';
                         var list1 = res.data.data.res;
-                        var len = res.data.data.res.length
-                        for(var i=0; i<len; i++){
-                            str += list1[i];
+                        var len = res.data.data.res.length;
+                        for (var i = 0; i < len; i++) {
+                            str += list1[i] + '\n';
                         }
                         console.log(str)
                         that.setData({
@@ -164,7 +213,7 @@ Page({
                 })
             }
         })
-        
+
         fs.unlink({
             filePath: `${wx.env.USER_DATA_PATH}/_l${123}.py`,
             encoding: 'utf8',
@@ -172,6 +221,13 @@ Page({
                 console.log("delete py")
             }
         })
+    },
+    getidea: function (e) {
+        console.log(e.detail.value)
+        this.setData({
+            ideaInput: e.detail.value,
+
+        });
     },
     /**
      * 生命周期函数--监听页面加载
