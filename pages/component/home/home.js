@@ -28,7 +28,6 @@ Component({
 
         project: '',
 
-
     },
     lifetimes:{
         attached: function () {
