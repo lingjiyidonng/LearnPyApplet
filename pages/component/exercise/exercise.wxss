@@ -2,7 +2,7 @@
 .exercise_container{
     margin-left: 32rpx;
     width: 688rpx;
-    height: 1000rpx;
+    /* height: 1000rpx; */
     line-height: 40rpx;
     border-radius: 40rpx;
     background-color: rgba(32, 31, 47, 100);
@@ -44,6 +44,20 @@
     background-color: rgba(74, 74, 98, 100);
     text-align: center;
     border: 5rpx solid rgba(107, 230, 255, 100);
+    color: rgba(255, 255, 255, 100);
+    font-size: 40rpx;
+    font-family: 'PMZDQingSong-regular';
+    font-weight: 900;
+}
+.exercise_item.solved{
+    margin: 40rpx;
+    width: 112rpx;
+    height: 112rpx;
+    line-height: 112rpx;
+    border-radius: 28rpx;
+    background-color: rgba(255, 154, 0, 100);
+    text-align: center;
+    /* border: 5rpx solid rgba(107, 230, 255, 100); */
     color: rgba(255, 255, 255, 100);
     font-size: 40rpx;
     font-family: 'PMZDQingSong-regular';

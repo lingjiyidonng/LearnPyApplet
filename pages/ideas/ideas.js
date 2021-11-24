@@ -1,18 +1,45 @@
 // pages/ideas/ideas.js
+var app = getApp()
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        ideas_list:["1","2","3"]
+        problemid:0,
+        codelist:[
+
+        ]
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        var that = this;
+        this.setData({
+            problemid: options.problemid
+        })
+        console.log("ideas problemid " + this.data.problemid)
+        wx.request({
+            url: 'http://124.70.47.51/user/problem/code',
+            method: "GET",
+            header: {
+              'Content-Type': 'application/json',
+              'Authorization': "Bearer " + app.globalData.token
+            },
+            data: {
+              problemid: that.data.problemid,
+              // delete project id 
+            },
+            success(res){
+                console.log(res)
+              that.setData({
+                  codelist: res.data.data.codelist
+              })
+              console.log(that.data.codelist)
+            }
+          })
     },
 
     /**

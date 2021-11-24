@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "component_project": "/pages/component/project/project"
+  }
 }

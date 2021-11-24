@@ -25,6 +25,7 @@ Component({
         dateTitleList: ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"],
         date: 0,
         days: '',
+
         project: '',
 
     },
@@ -38,14 +39,17 @@ Component({
                 date: time,
                 
             })
+
             // 登录
             wx.login({
                 success: res => {
                     var that = this
+
                     console.log(res.code)
                     // 发送 res.code 到后台换取 openId, sessionKey, unionId
                     if (res.code) {
                         console.log(res.code)
+
                         wx.request({
                             url: 'http://124.70.47.51/user/login',
                             method: "POST",
@@ -55,6 +59,7 @@ Component({
                             },
                             data: {
                                 code: res.code,
+
                             },
                             success(res) {
                                 //console.log(res)
@@ -77,7 +82,7 @@ Component({
                                 })
                             }
                         })
-                        //console.log(this.globalData.token)
+
                         //res = JSON.parse(res); //字符串转为对象 JSON字符串->JSON对象
                         //res = JSON.stringify(res) //对象->字符串
                     } else {
@@ -85,6 +90,7 @@ Component({
                     }
                 }
             })
+
             // wx.request({
             //     url: "http://124.70.47.51/user/home/project/random",
             //     method: "GET",
@@ -101,6 +107,7 @@ Component({
             //     }
             // })
         },
+
     },
     // pageLifetimes: {
     //     // 组件所在页面的生命周期函数
@@ -205,5 +212,6 @@ Component({
 
 
     },
+
 
 })

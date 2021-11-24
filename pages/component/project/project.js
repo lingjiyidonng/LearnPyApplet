@@ -30,7 +30,6 @@ Component({
         }
 
     },
-
     /**
      * 组件的初始数据
      */
@@ -43,7 +42,7 @@ Component({
         ],
         type_image:'https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/project/box3.png'
     },
-
+    
     /**
      * 组件的方法列表
      */
@@ -108,9 +107,9 @@ Component({
                     
                 },
                 
-            }),
-            console.log("当前project_item列表：")
-            console.log(this.data.project_item)
+            })
+            //console.log("当前project_item列表：")
+            //console.log(this.data.project_item)
         },
         
         copy_url:function (e) {
@@ -127,9 +126,86 @@ Component({
               }
             })
             
+        },
+
+        star_delete:function (e) {
+            var that = this
+            console.log(e.currentTarget.dataset.id)
+            if(this.data.project_item[e.currentTarget.dataset.id].is_collected)
+            {
+                console.log("this project is collected")
+                //delete
+                wx.request({
+                    url: 'http://124.70.47.51/user/project/collect',
+                    method: "DELETE",
+                    header: {
+                      'Content-Type': 'application/json',
+                      'Authorization': "Bearer " + app.globalData.token
+                    },
+                    data: {
+                      projectid: that.data.project_item[e.currentTarget.dataset.id].project,
+                      // delete project id 
+                    },
+                    success(res){
+                      console.log(res)  
+                      var t = "project_item["+e.currentTarget.dataset.id+"].is_collected";
+                      that.setData({
+                        [t]: false,
+                      });
+                    }
+                  })
+
+            }
+            else{
+                console.log("this project is not collectd")
+                //star
+                wx.request({
+                  url: 'http://124.70.47.51/user/project/collect',
+                  method: "POST",
+                  header: {
+                    'Content-Type': 'application/json',
+                    'Authorization': "Bearer " + app.globalData.token
+                  },
+                  data: {
+                    projectid: that.data.project_item[e.currentTarget.dataset.id].project,
+                    // star project id 
+                  },
+                  success(res){
+                    console.log(res)  
+                    var t = "project_item["+e.currentTarget.dataset.id+"].is_collected";
+                    that.setData({
+                      [t]: true,
+                    });
+                  }
+                })
+            }
         }
     },
     
+    pageLifetimes: {
+        // 组件所在页面的生命周期函数
+        show: function () {
+            console.log("project")
+            
+         },
+        hide: function () { },
+        resize: function () { },
+      },
 
-    
+    /**
+   * 组件生命周期函数-在组件实例刚刚被创建时执行
+   */
+  created() {
+    // 注意此时不能调用 setData
+    console.log('Component created');
+  },
+
+  // 生命周期函数，可以为函数，或一个在methods段中定义的方法名
+  attached: function () {
+      console.log("attached")
+   }, // 此处attached的声明会被lifetimes字段中的声明覆盖
+  ready: function() {
+      console.log("ready")
+      
+   },
 })

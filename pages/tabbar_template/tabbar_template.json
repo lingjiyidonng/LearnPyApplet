@@ -5,5 +5,7 @@
     "component_home": "/pages/component/home/home",
     "component_project": "/pages/component/project/project",
     "component_me": "/pages/component/me/me"
-  }
+  },
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50
 }
