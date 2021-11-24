@@ -123,8 +123,9 @@ Page({
         })
     },
     ideas:function(){
+      var that = this
         wx.navigateTo({
-          url: '/pages/ideas/ideas',
+          url: "/pages/ideas/ideas?problemid=" + that.data.problemid,
         })
     },
 

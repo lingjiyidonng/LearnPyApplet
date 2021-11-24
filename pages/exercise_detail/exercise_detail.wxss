@@ -67,19 +67,34 @@
     height: NaNpx;
     border: 1rpx solid rgba(255, 255, 255, 100);
 }
+.scroll-list {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.problem_detail{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    flex: 1;
+    overflow: hidden;
+}
 .content{
     margin-top: 22rpx;
     width: 540rpx;
     display: flex;
     margin-left: 5%;
     margin-right: 5%;
-    color: #FFFFFF;
+    color: cornflowerblue;
 }
+
 .question_content{
-    margin-top: 10rpx;
+    margin-top: 15rpx;
     margin-left: 5%;
     margin-right: 5%;
     text-align: left;
+    color: snow;
 }
 .btn_1{
     margin-top: 40rpx;

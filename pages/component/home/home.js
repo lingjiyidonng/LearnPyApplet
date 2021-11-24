@@ -26,10 +26,12 @@ Component({
         date: 0,
         days: '',
 
+        project: '',
+
+
     },
-    pageLifetimes: {
-        // 组件所在页面的生命周期函数
-        show: function () {
+    lifetimes:{
+        attached: function () {
             const util = require('../../../utils/util.js');
 
             let time = util.formatTime(new Date());
@@ -38,13 +40,17 @@ Component({
                 date: time,
                 
             })
-            console.log(this.data.date)
+
             // 登录
             wx.login({
                 success: res => {
                     var that = this
+
+                    console.log(res.code)
                     // 发送 res.code 到后台换取 openId, sessionKey, unionId
                     if (res.code) {
+                        console.log(res.code)
+
                         wx.request({
                             url: 'http://124.70.47.51/user/login',
                             method: "POST",
@@ -54,7 +60,7 @@ Component({
                             },
                             data: {
                                 code: res.code,
-                                // username: 
+
                             },
                             success(res) {
                                 //console.log(res)
@@ -77,6 +83,7 @@ Component({
                                 })
                             }
                         })
+
                         //res = JSON.parse(res); //字符串转为对象 JSON字符串->JSON对象
                         //res = JSON.stringify(res) //对象->字符串
                     } else {
@@ -84,10 +91,109 @@ Component({
                     }
                 }
             })
+
+            // wx.request({
+            //     url: "http://124.70.47.51/user/home/project/random",
+            //     method: "GET",
+            //     header: {
+            //         "content-type": "application/json",
+            //         "Authorization": "Bearer " + app.globalData.token
+            //     },
+            //     success: function (res) {
+            //         var that = this;
+            //         console.log(res.data)
+            //         that.setData({
+            //             project: res.data.data.project
+            //         })
+            //     }
+            // })
         },
-        hide: function () {},
-        resize: function () {},
+
     },
+    // pageLifetimes: {
+    //     // 组件所在页面的生命周期函数
+    //     show: function () {
+    //         const util = require('../../../utils/util.js');
+
+    //         let time = util.formatTime(new Date());
+    //         console.log('当前日期和时间:', time)
+    //         this.setData({
+    //             date: time,
+                
+    //         })
+    //         // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认
+    //         // 开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
+    //         wx.getUserProfile({
+    //             desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+    //             success: (res) => {
+    //               app.globalData.userInfo = res.userInfo;
+    //               console.log(app.globalData.userInfo)
+    //             }
+    //         })
+    //         // 登录
+    //         wx.login({
+    //             success: res => {
+    //                 var that = this
+    //                 // 发送 res.code 到后台换取 openId, sessionKey, unionId
+    //                 if (res.code) {
+    //                     wx.request({
+    //                         url: 'http://124.70.47.51/user/login',
+    //                         method: "POST",
+    //                         header: {
+    //                             'Content-Type': 'application/json',
+    //                             //'content-type': 'application/x-www-form-urlencoded'
+    //                         },
+    //                         data: {
+    //                             code: res.code,
+    //                         },
+    //                         success(res) {
+    //                             //console.log(res)
+    //                             app.globalData.token = res.data.data.token;
+    //                             console.log(app.globalData.token) //拿到后将token存入全局变量  以便其他页面使用
+    //                             wx.request({
+    //                                 url: "http://124.70.47.51/user/sign",
+    //                                 method: "GET",
+    //                                 header: {
+    //                                     "content-type": "application/json",
+    //                                     "Authorization": "Bearer " + app.globalData.token
+    //                                 },
+    //                                 success: function (res) {
+    //                                     that.days = res.data.data.days;
+    //                                     console.log(that.days)
+    //                                     that.setData({
+    //                                         days: res.data.data.days,
+    //                                     })
+    //                                 }
+    //                             })
+    //                         }
+    //                     })
+    //                     //console.log(this.globalData.token)
+    //                     //res = JSON.parse(res); //字符串转为对象 JSON字符串->JSON对象
+    //                     //res = JSON.stringify(res) //对象->字符串
+    //                 } else {
+    //                     console.log('登陆失败')
+    //                 }
+    //             }
+    //         })
+    //         // wx.request({
+    //         //     url: "http://124.70.47.51/user/home/project/random",
+    //         //     method: "GET",
+    //         //     header: {
+    //         //         "content-type": "application/json",
+    //         //         "Authorization": "Bearer " + app.globalData.token
+    //         //     },
+    //         //     success: function (res) {
+    //         //         var that = this;
+    //         //         console.log(res.data)
+    //         //         that.setData({
+    //         //             project: res.data.data.project
+    //         //         })
+    //         //     }
+    //         // })
+    //     },
+    //     hide: function () {},
+    //     resize: function () {},
+    // },
     /**
      * 组件的方法列表
      */
@@ -107,10 +213,6 @@ Component({
 
 
     },
-    ready: function() {
-        console.log("ready home")
-          
-      }
-    
+
 
 })

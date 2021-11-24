@@ -1,0 +1,33 @@
+/* pages/login/login.wxss */
+.bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.login-button{
+    position: absolute;
+    left: 250rpx;
+    top: 848rpx;
+    width: 264rpx;
+    height: 128rpx;
+    line-height: 64rpx;
+    border-radius: 40rpx;
+    background-color: rgba(74, 74, 98, 100);
+    color: rgba(16, 16, 16, 100);
+    font-size: 44rpx;
+    text-align: center;
+    font-family: Arial;
+    border: 4rpx solid rgba(187, 187, 187, 100);
+    display: flex;
+    justify-content: center;
+}
+.login-text{
+    color: rgba(255, 255, 255, 100);
+    font-size: 60rpx;
+    text-align: left;
+    font-family: PMZDBiaoTi-regular;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}

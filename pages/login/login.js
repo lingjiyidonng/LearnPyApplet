@@ -1,45 +1,31 @@
-// pages/ideas/ideas.js
-var app = getApp()
+// pages/login/login.js
+var app = getApp();
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        problemid:0,
-        codelist:[
 
-        ]
     },
+    login: function () {
+        wx.getUserProfile({
+            desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+            success: (res) => {
+                app.globalData.userInfo = res.userInfo;
+                console.log(app.globalData.userInfo)
+                wx.redirectTo({
+                    url: '../tabbar_template/tabbar_template'
+                })
+            }
+        })
 
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        var that = this;
-        this.setData({
-            problemid: options.problemid
-        })
-        console.log("ideas problemid " + this.data.problemid)
-        wx.request({
-            url: 'http://124.70.47.51/user/problem/code',
-            method: "GET",
-            header: {
-              'Content-Type': 'application/json',
-              'Authorization': "Bearer " + app.globalData.token
-            },
-            data: {
-              problemid: that.data.problemid,
-              // delete project id 
-            },
-            success(res){
-                console.log(res)
-              that.setData({
-                  codelist: res.data.data.codelist
-              })
-              console.log(that.data.codelist)
-            }
-          })
+
     },
 
     /**

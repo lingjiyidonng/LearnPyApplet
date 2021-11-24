@@ -17,7 +17,7 @@
 
 <!-- 自定义 tabbar -->
 <view class="tabbar">
-  <view class="item {{index==idx?'active':''}}" wx:for="{{tabBar}}" wx:for-index="idx" bindtap="goto" data-index='{{idx}}'>
+  <view class="item {{index==idx?'active':''}}" wx:for="{{tabBar}}" wx:key="index" wx:for-index="idx" bindtap="goto" data-index='{{idx}}'>
     <i class="iconfont {{item.icon}} icon"></i>
     <view class="text">{{item.name}}</view>
   </view>
