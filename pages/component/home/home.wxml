@@ -32,7 +32,7 @@
         </view>
         <view>
             <view class="dailybox-text1">每日试题</view>
-            <view  class="dailybox-text2">Compute Net Amount</view>
+            <view  class="dailybox-text2">everyday exercise</view>
         </view>
     </view>
     <view class="dailybox-line"></view>
@@ -44,7 +44,7 @@
         </view>
             <view>
                 <view class="dailybox-text1">每日项目</view>
-                <view  class="dailybox-text2">Halfish/cs231n</view>
+                <view  class="dailybox-text2">everyday project</view>
             </view>
         
     </view>
