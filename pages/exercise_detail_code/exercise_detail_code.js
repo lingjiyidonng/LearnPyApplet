@@ -204,7 +204,7 @@ Page({
                         var list1 = res.data.data.res;
                         var len = res.data.data.res.length;
                         for (var i = 0; i < len; i++) {
-                            str += list1[i] + '\n';
+                            str += list1[i];
                         }
                         console.log(str)
                         console.log(res.data.data.codeid)
