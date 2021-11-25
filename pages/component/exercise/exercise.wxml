@@ -5,21 +5,21 @@
 
         <view class="level">Level 1</view>
         <view class="exercise_list">
-            <block wx:key="index" wx:for="{{problem_list}}" wx:if="{{problem_list[index].problemid==1}}">
+            <block wx:key="index" wx:for="{{problem_list}}" wx:if="{{problem_list[index].level==1}}">
                 <view class="exercise_item {{problem_list[index].is_solve==true?'solved':''}}" bindtap="toExercise" bindlongpress="star_delete" data-id="{{index}}">{{problem_list[index].problemid}}</view>
             </block>    
         </view>
 
         <view class="level">Level 2</view>
         <view class="exercise_list">
-            <block wx:key="index" wx:for="{{problem_list}}" wx:if="{{problem_list[index].problemid==2}}">
+            <block wx:key="index" wx:for="{{problem_list}}" wx:if="{{problem_list[index].level==2}}">
                 <view class="exercise_item {{problem_list[index].is_solve==true?'solved':''}}" bindtap="toExercise" bindlongpress="star_delete" data-id="{{index}}">{{problem_list[index].problemid}}</view>
             </block>    
         </view>
 
         <view class="level">Level 3</view>
         <view class="exercise_list">
-            <block wx:key="index" wx:for="{{problem_list}}" wx:if="{{problem_list[index].problemid==3}}">
+            <block wx:key="index" wx:for="{{problem_list}}" wx:if="{{problem_list[index].level==3}}">
                 <view class="exercise_item {{problem_list[index].is_solve==true?'solved':''}}" bindtap="toExercise" bindlongpress="star_delete" data-id="{{index}}">{{problem_list[index].problemid}}</view>
             </block>    
         </view>
