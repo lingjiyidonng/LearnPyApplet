@@ -1,12 +1,14 @@
 <!--pages/my_code/my_code.wxml-->
 
 <view class="my_code_container">
-    <block wx:key="index" wx:for="{{codes}}">
-        <view class="my_code_item">
-            <view class="date">{{codes[index].codeid}}</view>
-            <view class="fengexian"></view>
-            <view class="title">{{codes[index].dt}}</view>
-        </view>
-        
+    <scroll-view class="page-section" scroll-y="ture" >
+        <block wx:key="index" wx:for="{{codes}}">
+            <view class="my_code_item" data-id="{{codes[index].codeid}}" bindtap="code_detail">
+                <view class="date">{{codes[index].codeid}}</view>
+                <view class="fengexian"></view>
+                <view class="title">{{codes[index].dt}}</view>
+            </view>
         </block>
+    </scroll-view>
 </view>
+

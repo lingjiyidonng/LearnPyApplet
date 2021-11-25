@@ -10,9 +10,11 @@
         "pages/ideas/ideas",
         "pages/my_star/my_star",
         "pages/my_code/my_code",
+        "pages/my_code_detail/my_code_detail",
         "pages/my_star_project/my_star_project",
         "pages/my_star_course/my_star_course",
         "pages/exercise_detail/exercise_detail",
+        "pages/exercise_detail_code/exercise_detail_code",
         "pages/course-content/course-content",
         "pages/logs/logs"
         

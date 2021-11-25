@@ -9,14 +9,16 @@
         </button>
     </view>
     <view class="title_item_box">
-        <block wx:key="index" wx:for="{{projects}}">
-        <view class="fengexian"></view>
-            <view class="title_item_box_1">
-                <view class="star_icon"></view>
-                <view class="item_name">{{projects[index].name}}</view>
-            </view>
+        <scroll-view class="page-section" scroll-y="ture" >
+            <block wx:key="index" wx:for="{{projects}}">
+            <view class="fengexian"></view>
+                <view class="title_item_box_1">
+                    <view class="star_icon"></view>
+                    <view class="item_name">{{projects[index].name}}</view>
+                </view>
         
-        </block>
+            </block>
+        </scroll-view>
     </view>
-    <view style="height: 20rpx;" bindtap="showProjects"></view>
 </view>
+

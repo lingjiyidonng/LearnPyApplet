@@ -14,7 +14,7 @@ Page({
         ],
         btn_image: 'https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/me/box3.png',
         projects:[
-
+            
         ]
     },
     toProject:function(){
@@ -37,11 +37,10 @@ Page({
                 'Authorization': "Bearer " + app.globalData.token
             },
             success(res){
-                //console.log(res)
+                console.log(res)
                 that.setData({
                     projects: res.data.data.projects
                 })
-                //console.log(that.data.projects)
             },
             
         })

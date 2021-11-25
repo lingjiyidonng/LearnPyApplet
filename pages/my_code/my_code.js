@@ -80,5 +80,14 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+
+    code_detail:function (e) {
+        console.log("go to my history code detail")
+            var that = this
+            var t = e.currentTarget.dataset.id
+            wx.navigateTo({
+              url: "/pages/my_code_detail/my_code_detail?codeid=" + t
+            })
     }
 })

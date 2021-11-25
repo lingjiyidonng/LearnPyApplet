@@ -9,14 +9,15 @@
         </button>
     </view>
     <view class="title_item_box">
-        <block wx:key="index" wx:for="{{courses}}">
-            <view class="fengexian"></view>
-            <view class="item">
-                <view class="star_icon"></view>
-                <view class="item_title_name">{{courses[index].title}}</view>
-            </view>
+        <scroll-view class="page-section" scroll-y="ture" >
+            <block wx:key="index" wx:for="{{courses}}">
+                <view class="fengexian"></view>
+                <view class="item">
+                    <view class="star_icon"></view>
+                    <view class="item_title_name">{{courses[index].title}}</view>
+                </view>
             
-        </block>
+            </block>
+        </scroll-view>
     </view>
-    <view style="height: 50rpx;"></view>
 </view>

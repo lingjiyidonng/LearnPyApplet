@@ -3,7 +3,7 @@
     margin-top: 30rpx;
     margin-left: 50rpx;
     width: 640rpx;
-    height: 1000rpx;
+    height: 1100rpx;
     line-height: 40rpx;
     border-radius: 24rpx;
     background-color: rgba(74, 74, 98, 100);
@@ -12,10 +12,18 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    box-sizing: border-box;
 }
+.page-section {
+    flex: 1;
+    overflow: hidden;
+}
+
 .my_code_item{
     margin-top: 50rpx;
-    width: 540rpx;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
     height: 138rpx;
     line-height: 40rpx;
     border-radius: 24rpx;
@@ -39,7 +47,7 @@
 }
 .fengexian{
     margin-top: 10rpx;
-    width: 488rpx;
+    width: 90%;
     height: NaNpx;
     border: 2rpx solid rgba(227, 227, 227, 100);
 }
