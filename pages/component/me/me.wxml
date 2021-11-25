@@ -1,7 +1,7 @@
 <!--pages/component/me/me.js.wxml-->
 <view class="m-container">
     <view class="account">
-        <image class="account-image" src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/homepage/learn_py.png">头像</image>
+        <image class="account-image" src='{{user_image}}'>头像</image>
         <view class="name">
             <view class="user-name">{{user_name}}</view>
             <view class="shiming">实名</view>

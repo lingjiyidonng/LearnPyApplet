@@ -119,7 +119,7 @@ Page({
     },
     coding:function(){
         wx.navigateTo({
-          url: '/pages/coding/coding',
+          url: '/pages/exercise_detail_code/exercise_detail_code',
         })
     },
     ideas:function(){

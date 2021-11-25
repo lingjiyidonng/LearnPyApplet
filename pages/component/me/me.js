@@ -15,16 +15,31 @@ Component({
         name:{
             type:String,
             value:'个人'
-        }
+        },
+        user_name: '',
+        user_image: ''
     },
 
     /**
      * 组件的初始数据
      */
     data: {
-        user_name:'LingJiYi_Dong',
+        
     },
 
+    pageLifetimes: {
+        // 组件所在页面的生命周期函数
+        show: function () {
+            this.setData({
+                user_name: app.globalData.userInfo.nickName,
+                user_image: app.globalData.userInfo.avatarUrl
+            })
+            
+        },
+        hide: function () {},
+        resize: function () {},
+    },
+    
     /**
      * 组件的方法列表
      */
