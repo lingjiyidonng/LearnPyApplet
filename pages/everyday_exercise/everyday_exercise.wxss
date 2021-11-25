@@ -53,7 +53,7 @@
     height: 50rpx;
     line-height: 50rpx;
     border-radius: 16rpx;
-    background-color: rgba(255, 154, 0, 100);
+    background-color: rgba(255, 98, 0, 100);
     color: rgba(255, 255, 255, 100);
     font-size: 28rpx;
     font-weight: 900;
@@ -67,13 +67,34 @@
     height: NaNpx;
     border: 1rpx solid rgba(255, 255, 255, 100);
 }
+.scroll-list {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.problem_detail{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    flex: 1;
+    overflow: hidden;
+}
 .content{
     margin-top: 22rpx;
     width: 540rpx;
-    height: 600rpx;
     display: flex;
     margin-left: 5%;
     margin-right: 5%;
+    color: cornflowerblue;
+}
+
+.question_content{
+    margin-top: 15rpx;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: left;
+    color: snow;
 }
 .btn_1{
     margin-top: 40rpx;
