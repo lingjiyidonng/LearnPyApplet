@@ -17,9 +17,10 @@ Page({
         result: '',
         ideaInput: '',
         showModal: false,
+        codeid: '',
 
     },
-    upload: function () {
+    upload: function () { 
         this.setData({
             showModal: true
         })
@@ -45,7 +46,7 @@ Page({
                 "Authorization": "Bearer " + app.globalData.token
             },
             data: {
-                "codeid": that.data.file.filename,
+                "codeid": that.data.codeid,
                 "courseid": that.data.courseid,
                 "describe": that.data.ideaInput,
                 "username": app.globalData.userInfo.nickName,
@@ -206,8 +207,10 @@ Page({
                             str += list1[i] + '\n';
                         }
                         console.log(str)
+                        console.log(res.data.data.codeid)
                         that.setData({
                             result: str,
+                            codeid: res.data.data.codeid,
                         })
                     }
                 })
