@@ -5,9 +5,14 @@
         <image src='{{robot_image}}' style="height: 224rpx; width: 224rpx; margin-left: 120rpx; z-index: 1;" bindtap="tap_robot"></image>
     </view>
     <view class="content-container">
-        <button class="tip" bindtap="tip">提示</button>
+        <button class="tip" bindtap="get_tip">提示</button>
         <view class="line"></view>
-        <text class="content">题目描述</text>
+        <view class="scroll-list">
+                <scroll-view class="problem_detail" scroll-y="true">
+                    <text class="content">QUESTION</text>
+                    <view class="question_content">{{everyday_problem.question}}</view>
+                </scroll-view>
+        </view>
     </view>
         <button class="btn_1" bindtap="coding">编码</button>
         <button class="btn_2" bindtap="ideas">ideas</button>

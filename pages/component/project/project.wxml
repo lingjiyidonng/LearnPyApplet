@@ -14,4 +14,3 @@
         <!-- <view class="item_content">{{project_item[index].projecturl}}</view> -->
     </block>
 </view>
-<view style="height: 200rpx; color: aliceblue;" bindtap="click111">{{item[0].projectname}}</view>

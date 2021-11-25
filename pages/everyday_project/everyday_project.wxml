@@ -1,5 +1,6 @@
 <!--pages/everyday_project/everyday_project.wxml-->
-<view class="container">
-  
+<view class="p-container">
+        <view class="title_item_box_1">
+            <view class="title" bindtap="copy_url" data-index="{{index}}">{{everyday_project.name}}</view>
+        </view>
 </view>
-
