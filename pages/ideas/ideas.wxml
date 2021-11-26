@@ -3,10 +3,10 @@
     <view class="ideas_title">优秀代码</view>
     <view class="ideas_container">
         <scroll-view class="page-section" scroll-y="ture" >
-            <block wx:key="index" wx:for="{{ideas_list}}">
-                <view class="ideas_item">
-                    <view class="user_image"></view>
-                    <view class="user_name">1</view>
+            <block wx:key="index" wx:for="{{codelist}}">
+                <view class="ideas_item" data-id="{{codelist[index].codeid}}" bindtap="read_code">
+                    <view class="user_image" style="background: url('{{codelist[index].avatar}}') no-repeat; background-size: 100%; margin-left: 20rpx; height: 100rpx; width: 100rpx; border-radius: 50%;"></view>
+                    <view class="user_name">{{codelist[index].username}}</view>
                 </view>
             </block>
         </scroll-view>

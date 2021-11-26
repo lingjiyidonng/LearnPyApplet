@@ -12,6 +12,15 @@ Page({
         ]
     },
 
+
+    read_code:function (e) {
+      var that = this
+      console.log(e)
+      wx.navigateTo({
+        url: '/pages/my_code_detail/my_code_detail?codeid' + e.currentTarget.dataset.id,
+      })
+    },
+
     /**
      * 生命周期函数--监听页面加载
      */
