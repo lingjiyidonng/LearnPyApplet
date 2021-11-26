@@ -118,8 +118,9 @@ Page({
         })
     },
     coding:function(){
+      var that = this;
         wx.navigateTo({
-          url: '/pages/exercise_detail_code/exercise_detail_code',
+          url: '/pages/exercise_detail_code/exercise_detail_code?problemid=' + that.data.problemid,
         })
     },
     ideas:function(){

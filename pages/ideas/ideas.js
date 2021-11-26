@@ -15,9 +15,8 @@ Page({
 
     read_code:function (e) {
       var that = this
-      console.log(e)
       wx.navigateTo({
-        url: '/pages/my_code_detail/my_code_detail?codeid' + e.currentTarget.dataset.id,
+        url: '/pages/my_code_detail/my_code_detail?codeid=' + e.currentTarget.dataset.id,
       })
     },
 

@@ -17,9 +17,10 @@ Page({
         result: '',
         ideaInput: '',
         showModal: false,
+        codeid: '',
 
     },
-    upload: function () {
+    upload: function () { 
         this.setData({
             showModal: true
         })
@@ -45,7 +46,7 @@ Page({
                 "Authorization": "Bearer " + app.globalData.token
             },
             data: {
-                "codeid": that.data.file.filename,
+                "codeid": that.data.codeid,
                 "courseid": that.data.courseid,
                 "describe": that.data.ideaInput,
                 "username": app.globalData.userInfo.nickName,
@@ -203,11 +204,13 @@ Page({
                         var list1 = res.data.data.res;
                         var len = res.data.data.res.length;
                         for (var i = 0; i < len; i++) {
-                            str += list1[i] + '\n';
+                            str += list1[i];
                         }
                         console.log(str)
+                        console.log(res.data.data.codeid)
                         that.setData({
                             result: str,
+                            codeid: res.data.data.codeid,
                         })
                     }
                 })
