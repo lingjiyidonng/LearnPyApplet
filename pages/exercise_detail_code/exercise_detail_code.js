@@ -1,4 +1,4 @@
-// pages/exercise_detail_code/exercise_detail_code.js
+// pages/coding/coding.js
 var app = getApp();
 Page({
 
@@ -9,7 +9,7 @@ Page({
         charList: ["tab", "[", "]", "{", "}", "<", ">", "+", "="],
         codeInput: '',
         tempInput: '',
-        courseid: '',
+        problemid: '',
         course: '',
         is_collect: '',
         cursor: 0,
@@ -17,9 +17,10 @@ Page({
         result: '',
         ideaInput: '',
         showModal: false,
+        codeid: '',
 
     },
-    upload: function () {
+    upload: function () { 
         this.setData({
             showModal: true
         })
@@ -45,8 +46,8 @@ Page({
                 "Authorization": "Bearer " + app.globalData.token
             },
             data: {
-                "codeid": that.data.file.filename,
-                "courseid": that.data.courseid,
+                "codeid": that.data.codeid,
+                "problemid": that.data.problemid,
                 "describe": that.data.ideaInput,
                 "username": app.globalData.userInfo.nickName,
                 "avatar": app.globalData.userInfo.avatarUrl,
@@ -113,53 +114,53 @@ Page({
             cursor: that.data.cursor + tempcursor,
         })
     },
-    collection: function () {
-        var that = this;
-        wx.request({
-            url: "http://124.70.47.51/user/course/collect",
-            method: "post",
-            header: {
-                "content-type": "application/json",
-                "Authorization": "Bearer " + app.globalData.token
-            },
-            data: {
-                "courseid": that.data.courseid,
-            },
-            success: function (res) {
-                console.log(res.data)
-                // console.log(that.data.course)
-                that.setData({
-                    is_collect: true,
-                })
-                console.log(that.data.is_collect)
+    // collection: function () {
+    //     var that = this;
+    //     wx.request({
+    //         url: "http://124.70.47.51/user/course/collect",
+    //         method: "post",
+    //         header: {
+    //             "content-type": "application/json",
+    //             "Authorization": "Bearer " + app.globalData.token
+    //         },
+    //         data: {
+    //             "courseid": that.data.courseid,
+    //         },
+    //         success: function (res) {
+    //             console.log(res.data)
+    //             // console.log(that.data.course)
+    //             that.setData({
+    //                 is_collect: true,
+    //             })
+    //             console.log(that.data.is_collect)
 
-            }
-        })
-    },
-    nocollection: function () {
-        var that = this;
-        wx.request({
-            url: "http://124.70.47.51/user/course/collect",
-            method: "delete",
-            header: {
-                "content-type": "application/json",
-                "Authorization": "Bearer " + app.globalData.token
-            },
-            data: {
-                "courseid": that.data.courseid,
-            },
-            success: function (res) {
-                console.log(res.data)
-                // console.log(that.data.course)
-                that.setData({
-                    is_collect: false,
-                })
-                console.log(that.data.is_collect)
+    //         }
+    //     })
+    // },
+    // nocollection: function () {
+    //     var that = this;
+    //     wx.request({
+    //         url: "http://124.70.47.51/user/course/collect",
+    //         method: "delete",
+    //         header: {
+    //             "content-type": "application/json",
+    //             "Authorization": "Bearer " + app.globalData.token
+    //         },
+    //         data: {
+    //             "courseid": that.data.courseid,
+    //         },
+    //         success: function (res) {
+    //             console.log(res.data)
+    //             // console.log(that.data.course)
+    //             that.setData({
+    //                 is_collect: false,
+    //             })
+    //             console.log(that.data.is_collect)
 
 
-            }
-        })
-    },
+    //         }
+    //     })
+    // },
     run: function () {
         const fs = wx.getFileSystemManager();
         var that = this;
@@ -203,11 +204,13 @@ Page({
                         var list1 = res.data.data.res;
                         var len = res.data.data.res.length;
                         for (var i = 0; i < len; i++) {
-                            str += list1[i] + '\n';
+                            str += list1[i];
                         }
                         console.log(str)
+                        console.log(res.data.data.codeid)
                         that.setData({
                             result: str,
+                            codeid: res.data.data.codeid,
                         })
                     }
                 })
@@ -233,28 +236,34 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        var temp = options.courseid;
+        var temp = options.problemid;
+        console.log(options);
         var that = this;
-        wx.request({
-            url: "http://124.70.47.51/user/course",
-            method: "GET",
-            header: {
-                "content-type": "application/json",
-                "Authorization": "Bearer " + app.globalData.token
-            },
-            data: {
-                "courseid": temp,
-            },
-            success: function (res) {
-                console.log(res.data.data.course.is_collect)
-                that.setData({
-                    courseid: options.courseid,
-                    course: res.data.data.course,
-                    is_collect: res.data.data.course.is_collect,
-                })
-            }
+        this.setData({
+            problemid: temp,
         })
     },
+
+        // wx.request({
+        //     url: "http://124.70.47.51/user/course",
+        //     method: "GET",
+        //     header: {
+        //         "content-type": "application/json",
+        //         "Authorization": "Bearer " + app.globalData.token
+        //     },
+        //     data: {
+        //         "courseid": temp,
+        //     },
+        //     success: function (res) {
+        //         console.log(res.data.data.course.is_collect)
+        //         that.setData({
+        //             courseid: options.courseid,
+        //             course: res.data.data.course,
+        //             is_collect: res.data.data.course.is_collect,
+        //         })
+        //     }
+        // })
+    // },
 
     /**
      * 生命周期函数--监听页面初次渲染完成

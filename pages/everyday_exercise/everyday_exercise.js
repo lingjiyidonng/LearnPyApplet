@@ -15,7 +15,8 @@ Page({
         ],
         everyday_problem: [
 
-        ]
+        ],
+        problemid: '',
     },
 
     tap_robot:function(){
@@ -47,8 +48,9 @@ Page({
         })
     },
     coding:function(){
+      var that = this;
         wx.navigateTo({
-          url: '/pages/coding/coding',
+          url: '/pages/exercise_detail_code/exercise_detail_code?problemid=' + that.data.problemid,
         })
     },
     ideas:function(){
@@ -96,8 +98,9 @@ Page({
                     success(res){
                       console.log(res)  
                       that.setData({
-                        everyday_problem: res.data.data.problem
-                      });
+                        everyday_problem: res.data.data.problem,
+                        problemid: that.data.problem.problemid
+                      })
                     }
                   })
             }
