@@ -54,15 +54,15 @@
     justify-content: flex-start;
     align-items: center;
 }
-.user_image{
-    margin-left: 10rpx;
+/* .user_image{
+    /* margin-left: 10rpx;
     height: 90%;
     margin-top: 5%;
     margin-bottom: 5%;
-    width: 140rpx;
-    background: url('https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/homepage/learn_py.png') no-repeat;
-    background-size: 100%;
-}
+    width: 140rpx; */
+    /* background: url('https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/homepage/learn_py.png') no-repeat; */
+    /* background-size: 100%; 
+} */
 .user_name{
     margin-left: 10%;
     height: 100%;
