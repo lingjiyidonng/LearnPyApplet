@@ -12,7 +12,7 @@
         <scroll-view class="page-section" scroll-y="ture" >
             <block wx:key="index" wx:for="{{courses}}">
                 <view class="fengexian"></view>
-                <view class="item">
+                <view class="item"  bindtap="toCourse_content" data-id="{{index}}">
                     <view class="star_icon"></view>
                     <view class="item_title_name">{{courses[index].title}}</view>
                 </view>
