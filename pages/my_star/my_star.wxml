@@ -10,9 +10,9 @@
     </view>
     <view class="title_item_box">
         <scroll-view class="page-section" scroll-y="ture" >
-            <block wx:key="index" wx:for="{{projects}}" data-id="{{projects[index].projectid}}">
+            <block wx:key="index" wx:for="{{projects}}">
             <view class="fengexian"></view>
-                <view class="title_item_box_1">
+                <view class="title_item_box_1" bindtap="copy_url" data-id="{{index}}">
                     <view class="star_icon" bindtap="delete_star"></view>
                     <view class="item_name">{{projects[index].name}}</view>
                 </view>

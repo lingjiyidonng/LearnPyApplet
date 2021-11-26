@@ -44,4 +44,13 @@ Page({
         })
         
     },
+
+    toCourse_content:function (e) {
+        console.log(e.currentTarget.dataset.id)
+        var that = this
+        var temp = e.currentTarget.dataset.id
+            wx.navigateTo({
+                url: "../course-content/course-content?courseid=" + that.data.courses[temp].courseid,
+              })
+    }
 })
