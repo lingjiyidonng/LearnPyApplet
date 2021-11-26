@@ -6,12 +6,6 @@ Page({
      * 页面的初始数据
      */
     data: {
-        title_item_list:[
-            "josephmisiti/awesome-machine-learning","wepe/MachineLearning","udacity/machine-learning","rasbt/python-machine-learning-book",
-        ],
-        title_item_content:[
-            "Learning frameworks, libraries and software.","Basic Machine Learning and Deep Learning","Content for Udacity's Machine Learning curriculum","The 'Python Machine Learning (1st edition)' book code repository and info resource",
-        ],
         btn_image: 'https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/me/box3.png',
         projects:[
             
@@ -48,5 +42,28 @@ Page({
     },
     showProjects:function () {
         console.log(this.data.projects)
-    }
+    },
+
+    // delete_star:function (e) {
+    //     var that = this
+    //         console.log(e.currentTarget.dataset.id)
+    //             console.log("user want to delete the star project")
+    //             //delete
+    //             wx.request({
+    //                 url: 'http://124.70.47.51/user/project/collect',
+    //                 method: "DELETE",
+    //                 header: {
+    //                   'Content-Type': 'application/json',
+    //                   'Authorization': "Bearer " + app.globalData.token
+    //                 },
+    //                 data: {
+    //                   projectid: e.currentTarget.dataset.id,
+    //                   // delete project id 
+    //                 },
+    //                 success(res){
+    //                   console.log(res)  
+    //                 }
+    //               })
+
+    //     }
 })

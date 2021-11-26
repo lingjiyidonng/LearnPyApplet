@@ -24,6 +24,7 @@
 .title_name{
     /* margin-left: 10rpx; */
     margin-left: 26rpx;
+    margin-right: 26rpx;
     width: 194rpx;
     height: 90rpx;
     border-radius: 24rpx;
@@ -37,6 +38,7 @@
 .title_name.active{
     /* margin-left: 10rpx; */
     margin-left: 26rpx;
+    margin-right: 26rpx;
     width: 194rpx;
     height: 90rpx;
     border-radius: 24rpx;
