@@ -169,52 +169,53 @@ Page({
             encoding: 'utf8',
             success(res) {
                 // console.log(res.data)
-            }
-        })
-        wx.uploadFile({
-            url: 'http://124.70.47.51/file/upload',
-            filePath: `${wx.env.USER_DATA_PATH}/_l${123}.py`,
-            name: 'file',
-            header: {
-                'content-type': 'multipart/form-data'
-            },
-            formData: null,
-            success: function (res) {
-
-                var data = JSON.parse(res.data)
-                console.log(data.data)
-                that.setData({
-                    file: data.data,
-                })
-
-                wx.request({
-                    url: "http://124.70.47.51/user/code/run",
-                    method: "post",
+                wx.uploadFile({
+                    url: 'http://124.70.47.51/file/upload',
+                    filePath: `${wx.env.USER_DATA_PATH}/_l${123}.py`,
+                    name: 'file',
                     header: {
-                        "content-type": "application/json",
-                        "Authorization": "Bearer " + app.globalData.token
+                        'content-type': 'multipart/form-data'
                     },
-                    data: {
-                        "codefile": that.data.file.filename,
-                    },
+                    formData: null,
                     success: function (res) {
-                        console.log(res.data)
-                        var str = '';
-                        var list1 = res.data.data.res;
-                        var len = res.data.data.res.length;
-                        for (var i = 0; i < len; i++) {
-                            str += list1[i];
-                        }
-                        console.log(str)
-                        console.log(res.data.data.codeid)
+        
+                        var data = JSON.parse(res.data)
+                        console.log(data.data)
                         that.setData({
-                            result: str,
-                            codeid: res.data.data.codeid,
+                            file: data.data,
+                        })
+        
+                        wx.request({
+                            url: "http://124.70.47.51/user/code/run",
+                            method: "post",
+                            header: {
+                                "content-type": "application/json",
+                                "Authorization": "Bearer " + app.globalData.token
+                            },
+                            data: {
+                                "codefile": that.data.file.filename,
+                            },
+                            success: function (res) {
+                                console.log(res.data)
+                                var str = '';
+                                var list1 = res.data.data.res;
+                                var len = res.data.data.res.length;
+                                for (var i = 0; i < len; i++) {
+                                    str += list1[i] + "\n";
+                                }
+                                console.log(str)
+                                console.log(res.data.data.codeid)
+                                that.setData({
+                                    result: str,
+                                    codeid: res.data.data.codeid,
+                                })
+                            }
                         })
                     }
                 })
             }
         })
+        
 
         fs.unlink({
             filePath: `${wx.env.USER_DATA_PATH}/_l${123}.py`,
