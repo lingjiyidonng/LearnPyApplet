@@ -21,6 +21,7 @@
 
 .my_code_item{
     margin-top: 50rpx;
+    margin-bottom: 50rpx;
     margin-left: 5%;
     margin-right: 5%;
     width: 90%;

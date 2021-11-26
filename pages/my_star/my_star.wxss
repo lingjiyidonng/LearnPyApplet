@@ -75,7 +75,9 @@
 }
 .fengexian{
     margin-top: 10rpx;
-    width: 648rpx;
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 650rpx;
     height: NaNpx;
     border: 1rpx solid rgba(187, 187, 187, 100);
 }

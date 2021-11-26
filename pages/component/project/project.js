@@ -18,11 +18,9 @@ Component({
         },
         project_item:{
             type:Array,
-            value:  [{project: 1,
-                    projectname: "Mining Twitter Data with Python",
-                    projecturl: "https://marcobonzanini.com/2015/03/02/mining-twitter-data-with-python-part-1/",
-                    is_collected: true
-                    },],
+            value:  [
+
+            ],
         },
         current_index:{
             type:Number,
@@ -43,6 +41,61 @@ Component({
         type_image:'https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/project/box3.png'
     },
     
+    pageLifetimes: {
+        // 组件所在页面的生命周期函数
+        show: function () {
+            console.log("project show")
+            // 登录
+            wx.login({
+                success: res => {
+                    var that = this
+                    // 发送 res.code 到后台换取 openId, sessionKey, unionId
+                    if (res.code) {
+                        wx.request({
+                            url: 'http://124.70.47.51/user/login',
+                            method: "POST",
+                            header: {
+                                'Content-Type': 'application/json',
+                                //'content-type': 'application/x-www-form-urlencoded'
+                            },
+                            data: {
+                                code: res.code,
+                            },
+                            success(res) {
+                                console.log("project " + res)
+                                app.globalData.token = res.data.data.token;
+                                // console.log(app.globalData.token) //拿到后将token存入全局变量  以便其他页面使用
+                                wx.request({
+                                    url: 'http://124.70.47.51/user/project/getlist',
+                                    method: "GET",
+                                    header: {
+                                        'Content-Type': 'application/json',
+                                        'Authorization': "Bearer " + app.globalData.token
+                                    },
+                                    success(res){
+                                        console.log("init project " + res)
+                                        that.setData({
+                                            project_item: res.data.msg.网络爬虫,
+                                        })
+                                        
+                                    },
+                                    
+                                })
+                            }
+                        })
+                        //console.log(this.globalData.token)
+                        //res = JSON.parse(res); //字符串转为对象 JSON字符串->JSON对象
+                        //res = JSON.stringify(res) //对象->字符串
+                    } else {
+                        console.log('登陆失败')
+                    }
+                }
+            })
+        },
+        hide: function () {},
+        resize: function () {},
+    },
+
     /**
      * 组件的方法列表
      */
@@ -182,30 +235,4 @@ Component({
         }
     },
     
-    pageLifetimes: {
-        // 组件所在页面的生命周期函数
-        show: function () {
-            console.log("project")
-            
-         },
-        hide: function () { },
-        resize: function () { },
-      },
-
-    /**
-   * 组件生命周期函数-在组件实例刚刚被创建时执行
-   */
-  created() {
-    // 注意此时不能调用 setData
-    console.log('Component created');
-  },
-
-  // 生命周期函数，可以为函数，或一个在methods段中定义的方法名
-  attached: function () {
-      console.log("attached")
-   }, // 此处attached的声明会被lifetimes字段中的声明覆盖
-  ready: function() {
-      console.log("ready")
-      
-   },
 })
