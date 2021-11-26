@@ -20,6 +20,14 @@ Page({
             url: "../coding/coding?courseid=" + that.data.course.courseid + "&iscollect=" + that.data.is_collect + "&title=" + that.data.course.title,
         })
     },
+
+    ideas:function () {
+        console.log("ideas")
+        var that = this;
+        wx.navigateTo({
+            url: "../ideas/ideas?problemid=" + that.data.course.courseid 
+        })
+    },
     collection: function () {
         var that = this;
         wx.request({
