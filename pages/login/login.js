@@ -9,14 +9,18 @@ Page({
 
     },
     login: function () {
+        var that = this;
         wx.getUserProfile({
             desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
             success: (res) => {
                 app.globalData.userInfo = res.userInfo;
                 console.log(app.globalData.userInfo)
-                wx.redirectTo({
-                    url: '../tabbar_template/tabbar_template'
+                that.setData({
+                    islogin: true
                 })
+                // wx.redirectTo({
+                //     url: '../tabbar_template/tabbar_template'
+                // })
             }
         })
 

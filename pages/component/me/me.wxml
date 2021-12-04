@@ -1,27 +1,35 @@
 <!--pages/component/me/me.js.wxml-->
-<view class="m-container">
-    <view class="account">
-        <image class="account-image" src='{{user_image}}'>头像</image>
-        <view class="name">
-            <view class="user-name">{{user_name}}</view>
-            <view class="shiming">实名</view>
-        </view>
+<view wx:if="{{!islogin}}">
+    <image src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/new/one.png" class="bg"></image>
+    <view class="login-button" bindtap="login">
+        <view class="login-text">登录</view>
     </view>
-    <view class="my-list">
-        <view class="my-list-item" bindtap="toMyStar">
-            <view class="my-list-item-icon1"></view>
-            <view class="my-list-item-name">我的收藏</view>
-            <image class="enter-icon" src="/pages/icons/进入.png"></image>
+</view>
+<view wx:else>
+    <view class="m-container">
+        <view class="account">
+            <image class="account-image" src='{{user_image}}'>头像</image>
+            <view class="name">
+                <view class="user-name">{{user_name}}</view>
+                <view class="shiming">实名</view>
+            </view>
         </view>
-        <view class="my-list-item" bindtap="toMyCode">
-            <view class="my-list-item-icon2"></view>
-            <view class="my-list-item-name">我的代码</view>
-            <image class="enter-icon" src="/pages/icons/进入.png"></image>
-        </view>
-        <view class="my-list-item">
-            <view class="my-list-item-icon3"></view>
-            <view class="my-list-item-name">帮助反馈</view>
-            <image class="enter-icon" src="/pages/icons/进入.png"></image>
+        <view class="my-list">
+            <view class="my-list-item" bindtap="toMyStar">
+                <view class="my-list-item-icon1"></view>
+                <view class="my-list-item-name">我的收藏</view>
+                <image class="enter-icon" src="/pages/icons/进入.png"></image>
+            </view>
+            <view class="my-list-item" bindtap="toMyCode">
+                <view class="my-list-item-icon2"></view>
+                <view class="my-list-item-name">我的代码</view>
+                <image class="enter-icon" src="/pages/icons/进入.png"></image>
+            </view>
+            <view class="my-list-item">
+                <view class="my-list-item-icon3"></view>
+                <view class="my-list-item-name">帮助反馈</view>
+                <image class="enter-icon" src="/pages/icons/进入.png"></image>
+            </view>
         </view>
     </view>
 </view>
