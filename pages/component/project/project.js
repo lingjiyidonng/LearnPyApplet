@@ -73,10 +73,48 @@ Component({
                                         'Authorization': "Bearer " + app.globalData.token
                                     },
                                     success(res){
-                                        console.log("init project " + res)
-                                        that.setData({
-                                            project_item: res.data.msg.网络爬虫,
-                                        })
+                                        switch(that.data.current_index){
+                                            case 0:
+                                                that.setData({
+                                                    project_item: res.data.msg.网络爬虫,
+                                                })
+                                                break;
+                                            case 1:
+                                                that.setData({
+                                                    project_item: res.data.msg.网络开发,
+                                                })
+                                                break;
+                                            case 2:
+                                                that.setData({
+                                                    project_item: res.data.msg.机器人
+                                                })
+                                                break;
+                                            case 3:
+                                                that.setData({
+                                                    project_item: res.data.msg.数据科学
+                                                })
+                                                break;
+                                            case 4:
+                                                that.setData({
+                                                    project_item: res.data.msg.机器学习
+                                                })
+                                                break;
+                                            case 5:
+                                                that.setData({
+                                                    project_item: res.data.msg.OpenCV
+                                                })
+                                                break;
+                                            case 6:
+                                                that.setData({
+                                                    project_item: res.data.msg.深度学习
+                                                })
+                                                break;
+                                            case 7:
+                                                that.setData({
+                                                    project_item: res.data.msg.其他
+                                                })
+                                                break;
+                                        }
                                         
                                     },
                                     

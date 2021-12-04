@@ -24,7 +24,7 @@ Page({
     onLoad:function () {
         var that = this;
         wx.request({
-            url: 'http://124.70.47.51/user/home/project',
+            url: 'http://124.70.47.51/user/home/projects',
             method: "GET",
             header: {
                 'Content-Type': 'application/json',
@@ -40,6 +40,7 @@ Page({
         })
         
     },
+    
     showProjects:function () {
         console.log(this.data.projects)
     },
@@ -78,7 +79,8 @@ Page({
     //                   // delete project id 
     //                 },
     //                 success(res){
-    //                   console.log(res)  
+    //                   console.log(res) 
+    //                   that.onShow(); 
     //                 }
     //               })
 

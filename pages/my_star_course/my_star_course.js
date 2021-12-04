@@ -27,7 +27,7 @@ Page({
     onLoad:function () {
         var that = this;
         wx.request({
-            url: 'http://124.70.47.51/user/home/course',
+            url: 'http://124.70.47.51/user/home/courses',
             method: "GET",
             header: {
                 'Content-Type': 'application/json',
@@ -43,6 +43,25 @@ Page({
             
         })
         
+    },
+    onShow:function () {
+        var that = this;
+        wx.request({
+            url: 'http://124.70.47.51/user/home/courses',
+            method: "GET",
+            header: {
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + app.globalData.token
+            },
+            success(res){
+                //console.log(res)
+                that.setData({
+                    courses: res.data.data.courses
+                })
+                //console.log(that.data.projects)
+            },
+            
+        })
     },
 
     toCourse_content:function (e) {

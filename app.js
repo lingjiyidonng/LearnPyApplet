@@ -5,7 +5,7 @@ App({
   globalData: {
     token: '',
     userInfo: null,
-    
+    host: '124.70.47.51'
   },
   onLaunch() {
     // 展示本地存储能力
