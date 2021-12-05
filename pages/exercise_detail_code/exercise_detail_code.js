@@ -20,7 +20,7 @@ Page({
         codeid: '',
 
     },
-    upload: function () { 
+    upload: function () {
         this.setData({
             showModal: true
         })
@@ -38,37 +38,47 @@ Page({
     },
     submit: function () {
         var that = this;
-        wx.request({
-            url: "http://124.70.47.51/user/code/commit",
-            method: "post",
-            header: {
-                "content-type": "application/json",
-                "Authorization": "Bearer " + app.globalData.token
-            },
-            data: {
-                "codeid": that.data.codeid,
-                "problemid": that.data.problemid,
-                "describe": that.data.ideaInput,
-                "username": app.globalData.userInfo.nickName,
-                "avatar": app.globalData.userInfo.avatarUrl,
-            },
-            success: function (res) {
-                
-                console.log(res.data)
-                console.log(that.data.file.filename)
-                console.log(that.data.courseid)
-                console.log(that.data.ideaInput)
-                console.log(app.globalData.userInfo.nickName)
-                console.log(app.globalData.userInfo.avatarUrl)
-                
-                
-                
-            }
-        })
-        this.setData({
-            showModal: false
-        })
+        if (app.globalData.userInfo == null) {
+            wx.showToast({
+                icon: 'error',
+                title: '您未登录',
 
+            })
+        } else {
+            wx.request({
+                url: "http://124.70.47.51/user/code/commit",
+                method: "post",
+                header: {
+                    "content-type": "application/json",
+                    "Authorization": "Bearer " + app.globalData.token
+                },
+                data: {
+                    "codeid": that.data.codeid,
+                    "problemid": that.data.problemid,
+                    "describe": that.data.ideaInput,
+                    "username": app.globalData.userInfo.nickName,
+                    "avatar": app.globalData.userInfo.avatarUrl,
+                },
+                success: function (res) {
+                    wx.showToast({
+                        title: '上传成功',
+        
+                    })
+                    console.log(res.data)
+                    console.log(that.data.file.filename)
+                    console.log(that.data.courseid)
+                    console.log(that.data.ideaInput)
+                    console.log(app.globalData.userInfo.nickName)
+                    console.log(app.globalData.userInfo.avatarUrl)
+
+
+
+                }
+            })
+            this.setData({
+                showModal: false
+            })
+        }
     },
     bindTextAreaBlur: function (e) {
         console.log(e.detail.value)
@@ -169,53 +179,54 @@ Page({
             data: that.data.tempInput,
             encoding: 'utf8',
             success(res) {
-                // console.log(res.data)
-            }
-        })
-        wx.uploadFile({
-            url: 'http://124.70.47.51/file/upload',
-            filePath: `${wx.env.USER_DATA_PATH}/_l${123}.py`,
-            name: 'file',
-            header: {
-                'content-type': 'multipart/form-data'
-            },
-            formData: null,
-            success: function (res) {
-
-                var data = JSON.parse(res.data)
-                console.log(data.data)
-                that.setData({
-                    file: data.data,
-                })
-
-                wx.request({
-                    url: "http://124.70.47.51/user/code/run",
-                    method: "post",
+                console.log(res.data)
+                wx.uploadFile({
+                    url: 'http://124.70.47.51/file/upload',
+                    filePath: `${wx.env.USER_DATA_PATH}/_l${123}.py`,
+                    name: 'file',
                     header: {
-                        "content-type": "application/json",
-                        "Authorization": "Bearer " + app.globalData.token
+                        'content-type': 'multipart/form-data'
                     },
-                    data: {
-                        "codefile": that.data.file.filename,
-                    },
+                    formData: null,
                     success: function (res) {
-                        console.log(res.data)
-                        var str = '';
-                        var list1 = res.data.data.res;
-                        var len = res.data.data.res.length;
-                        for (var i = 0; i < len; i++) {
-                            str += list1[i];
-                        }
-                        console.log(str)
-                        console.log(res.data.data.codeid)
+                        console.log(res)
+                        var data = JSON.parse(res.data)
+                        console.log(data.data)
                         that.setData({
-                            result: str,
-                            codeid: res.data.data.codeid,
+                            file: data.data,
+                        })
+
+                        wx.request({
+                            url: "http://124.70.47.51/user/code/run",
+                            method: "post",
+                            header: {
+                                "content-type": "application/json",
+                                "Authorization": "Bearer " + app.globalData.token
+                            },
+                            data: {
+                                "codefile": that.data.file.filename,
+                            },
+                            success: function (res) {
+                                console.log(res.data)
+                                var str = '';
+                                var list1 = res.data.data.res;
+                                var len = res.data.data.res.length;
+                                for (var i = 0; i < len; i++) {
+                                    str += list1[i] + "\n";
+                                }
+                                console.log(str)
+                                console.log(res.data.data.codeid)
+                                that.setData({
+                                    result: str,
+                                    codeid: res.data.data.codeid,
+                                })
+                            }
                         })
                     }
                 })
             }
         })
+
 
         fs.unlink({
             filePath: `${wx.env.USER_DATA_PATH}/_l${123}.py`,
@@ -244,25 +255,25 @@ Page({
         })
     },
 
-        // wx.request({
-        //     url: "http://124.70.47.51/user/course",
-        //     method: "GET",
-        //     header: {
-        //         "content-type": "application/json",
-        //         "Authorization": "Bearer " + app.globalData.token
-        //     },
-        //     data: {
-        //         "courseid": temp,
-        //     },
-        //     success: function (res) {
-        //         console.log(res.data.data.course.is_collect)
-        //         that.setData({
-        //             courseid: options.courseid,
-        //             course: res.data.data.course,
-        //             is_collect: res.data.data.course.is_collect,
-        //         })
-        //     }
-        // })
+    // wx.request({
+    //     url: "http://124.70.47.51/user/course",
+    //     method: "GET",
+    //     header: {
+    //         "content-type": "application/json",
+    //         "Authorization": "Bearer " + app.globalData.token
+    //     },
+    //     data: {
+    //         "courseid": temp,
+    //     },
+    //     success: function (res) {
+    //         console.log(res.data.data.course.is_collect)
+    //         that.setData({
+    //             courseid: options.courseid,
+    //             course: res.data.data.course,
+    //             is_collect: res.data.data.course.is_collect,
+    //         })
+    //     }
+    // })
     // },
 
     /**

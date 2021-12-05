@@ -62,8 +62,8 @@ Page({
             },
             
         })
+        
     },
-
     toCourse_content:function (e) {
         console.log(e.currentTarget.dataset.id)
         var that = this

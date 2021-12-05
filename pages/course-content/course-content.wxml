@@ -26,7 +26,7 @@
     <image class="coding-button" src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/box_1.png"
         bindtap="coding"></image>
     <image class="coding-button"
-        src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/box_2.png" bindtap="ideas"></image>
+        src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/box_2.png"></image>
 </view>
-<view class="coding-text">编码</view>
-<view class="idea-text">ideas</view>
+<view class="coding-text" bindtap="coding">编码</view>
+<view class="idea-text" bindtap="ideas">ideas</view>
