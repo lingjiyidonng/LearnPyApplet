@@ -20,7 +20,7 @@ Page({
         codeid: '',
 
     },
-    upload: function () { 
+    upload: function () {
         this.setData({
             showModal: true
         })
@@ -38,37 +38,47 @@ Page({
     },
     submit: function () {
         var that = this;
-        wx.request({
-            url: "http://124.70.47.51/user/code/commit",
-            method: "post",
-            header: {
-                "content-type": "application/json",
-                "Authorization": "Bearer " + app.globalData.token
-            },
-            data: {
-                "codeid": that.data.codeid,
-                "problemid": that.data.problemid,
-                "describe": that.data.ideaInput,
-                "username": app.globalData.userInfo.nickName,
-                "avatar": app.globalData.userInfo.avatarUrl,
-            },
-            success: function (res) {
-                
-                console.log(res.data)
-                console.log(that.data.file.filename)
-                console.log(that.data.courseid)
-                console.log(that.data.ideaInput)
-                console.log(app.globalData.userInfo.nickName)
-                console.log(app.globalData.userInfo.avatarUrl)
-                
-                
-                
-            }
-        })
-        this.setData({
-            showModal: false
-        })
+        if (app.globalData.userInfo == null) {
+            wx.showToast({
+                icon: 'error',
+                title: '您未登录',
 
+            })
+        } else {
+            wx.request({
+                url: "http://124.70.47.51/user/code/commit",
+                method: "post",
+                header: {
+                    "content-type": "application/json",
+                    "Authorization": "Bearer " + app.globalData.token
+                },
+                data: {
+                    "codeid": that.data.codeid,
+                    "problemid": that.data.problemid,
+                    "describe": that.data.ideaInput,
+                    "username": app.globalData.userInfo.nickName,
+                    "avatar": app.globalData.userInfo.avatarUrl,
+                },
+                success: function (res) {
+                    wx.showToast({
+                        title: '上传成功',
+        
+                    })
+                    console.log(res.data)
+                    console.log(that.data.file.filename)
+                    console.log(that.data.courseid)
+                    console.log(that.data.ideaInput)
+                    console.log(app.globalData.userInfo.nickName)
+                    console.log(app.globalData.userInfo.avatarUrl)
+
+
+
+                }
+            })
+            this.setData({
+                showModal: false
+            })
+        }
     },
     bindTextAreaBlur: function (e) {
         console.log(e.detail.value)
@@ -185,7 +195,7 @@ Page({
                         that.setData({
                             file: data.data,
                         })
-        
+
                         wx.request({
                             url: "http://124.70.47.51/user/code/run",
                             method: "post",
@@ -197,7 +207,7 @@ Page({
                                 "codefile": that.data.file.filename,
                             },
                             success: function (res) {
-                                console.log(res.data) 
+                                console.log(res.data)
                                 var str = '';
                                 var list1 = res.data.data.res;
                                 var len = res.data.data.res.length;
@@ -216,7 +226,7 @@ Page({
                 })
             }
         })
-        
+
 
         fs.unlink({
             filePath: `${wx.env.USER_DATA_PATH}/_l${123}.py`,
@@ -245,25 +255,25 @@ Page({
         })
     },
 
-        // wx.request({
-        //     url: "http://124.70.47.51/user/course",
-        //     method: "GET",
-        //     header: {
-        //         "content-type": "application/json",
-        //         "Authorization": "Bearer " + app.globalData.token
-        //     },
-        //     data: {
-        //         "courseid": temp,
-        //     },
-        //     success: function (res) {
-        //         console.log(res.data.data.course.is_collect)
-        //         that.setData({
-        //             courseid: options.courseid,
-        //             course: res.data.data.course,
-        //             is_collect: res.data.data.course.is_collect,
-        //         })
-        //     }
-        // })
+    // wx.request({
+    //     url: "http://124.70.47.51/user/course",
+    //     method: "GET",
+    //     header: {
+    //         "content-type": "application/json",
+    //         "Authorization": "Bearer " + app.globalData.token
+    //     },
+    //     data: {
+    //         "courseid": temp,
+    //     },
+    //     success: function (res) {
+    //         console.log(res.data.data.course.is_collect)
+    //         that.setData({
+    //             courseid: options.courseid,
+    //             course: res.data.data.course,
+    //             is_collect: res.data.data.course.is_collect,
+    //         })
+    //     }
+    // })
     // },
 
     /**

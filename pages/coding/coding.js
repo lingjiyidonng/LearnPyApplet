@@ -38,6 +38,14 @@ Page({
     },
     submit: function () {
         var that = this;
+        if(app.globalData.userInfo == null){
+            wx.showToast({
+                icon: 'error',
+                title: '您未登录',
+
+            })
+        }
+        else{
         wx.request({
             url: "http://124.70.47.51/user/code/commit",
             method: "post",
@@ -53,7 +61,10 @@ Page({
                 "avatar": app.globalData.userInfo.avatarUrl,
             },
             success: function (res) {
-                
+                wx.showToast({
+                    title: '上传成功',
+    
+                })
                 console.log(res.data)
                 console.log(that.data.file.filename)
                 console.log(that.data.courseid)
@@ -64,11 +75,12 @@ Page({
                 
                 
             }
+        
         })
         this.setData({
             showModal: false
         })
-
+    }
     },
     bindTextAreaBlur: function (e) {
         console.log(e.detail.value)
@@ -169,7 +181,7 @@ Page({
             data: that.data.tempInput,
             encoding: 'utf8',
             success(res) {
-                // console.log(res.data)
+                console.log("success write")
                 wx.uploadFile({
                     url: 'http://124.70.47.51/file/upload',
                     filePath: `${wx.env.USER_DATA_PATH}/_l${123}.py`,
@@ -179,7 +191,7 @@ Page({
                     },
                     formData: null,
                     success: function (res) {
-        
+                        console.log("success upload")
                         var data = JSON.parse(res.data)
                         console.log(data.data)
                         that.setData({
@@ -197,6 +209,7 @@ Page({
                                 "codefile": that.data.file.filename,
                             },
                             success: function (res) {
+                                console.log("success run")
                                 console.log(res.data)
                                 var str = '';
                                 var list1 = res.data.data.res;
@@ -216,8 +229,6 @@ Page({
                 })
             }
         })
-        
-
         fs.unlink({
             filePath: `${wx.env.USER_DATA_PATH}/_l${123}.py`,
             encoding: 'utf8',
