@@ -6,7 +6,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        btn_image: 'https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/me/box3.png',
+        btn_image: 'http://124.70.47.51/file/download/images/me/box3.png',
         projects:[
             
         ],
@@ -14,9 +14,9 @@ Page({
         is_collected:[
             true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true
         ],
-        icon: 'https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/project/collection_luminous.png',
-        collected: 'https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/project/collection_luminous.png',
-        no_collected: 'https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/project/collection_dark.png'
+        icon: 'http://124.70.47.51/file/download/images/project/collection_luminous.png',
+        collected: 'http://124.70.47.51/file/download/images/project/collection_luminous.png',
+        no_collected: 'http://124.70.47.51/file/download/images/project/collection_dark.png'
     },
     toProject:function(){
         wx.redirectTo({
@@ -31,7 +31,7 @@ Page({
     onLoad:function () {
         var that = this;
         wx.request({
-            url: 'http://124.70.47.51/user/home/projects',
+            url: 'http://172.17.175.235/user/home/projects',
             method: "GET",
             header: {
                 'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ Page({
     onShow:function () {
         var that = this;
         wx.request({
-            url: 'http://124.70.47.51/user/home/projects',
+            url: 'http://172.17.175.235/user/home/projects',
             method: "GET",
             header: {
                 'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ Page({
         if(that.data.is_collected[e.currentTarget.dataset.index])
         {
             wx.request({
-          url: 'http://124.70.47.51/user/project/collect',
+          url: 'http://172.17.175.235/user/project/collect',
           method: "DELETE",
             header: {
                 'Content-Type': 'application/json',
@@ -124,7 +124,7 @@ Page({
 
         else{
             wx.request({
-                url: 'http://124.70.47.51/user/project/collect',
+                url: 'http://172.17.175.235/user/project/collect',
                 method: "POST",
                   header: {
                       'Content-Type': 'application/json',

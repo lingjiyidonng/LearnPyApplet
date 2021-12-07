@@ -12,7 +12,7 @@ Page({
             //console.log(this.data.problem.is_solved)
             var that = this;
             wx.request({
-                url: 'http://124.70.47.51/user/home/project/random',
+                url: 'http://172.17.175.235/user/home/project/random',
                 method: "GET",
                 header: {
                   'Content-Type': 'application/json',

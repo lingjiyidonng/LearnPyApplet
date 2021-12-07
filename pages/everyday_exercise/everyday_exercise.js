@@ -7,9 +7,9 @@ Page({
      */
     data: {
         flag:-1,
-        robot_image:'https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/everyday_exercise/robot_dark.png',
-        robot_image_1:'https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/everyday_exercise/robot_dark.png',
-        robot_image_2:'https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/everyday_exercise/robot_luminous.png',
+        robot_image:'http://124.70.47.51/file/download/images/everyday_exercise/robot_dark.png',
+        robot_image_1:'http://124.70.47.51/file/download/images/everyday_exercise/robot_dark.png',
+        robot_image_2:'http://124.70.47.51/file/download/images/everyday_exercise/robot_luminous.png',
         problem:[
 
         ],
@@ -63,7 +63,7 @@ Page({
         //console.log(this.data.problem.is_solved)
         var that = this;
         wx.request({
-            url: 'http://124.70.47.51/user/home/problem/random',
+            url: 'http://172.17.175.235/user/home/problem/random',
             method: "GET",
             header: {
               'Content-Type': 'application/json',
@@ -86,7 +86,7 @@ Page({
                     })
                 }
                 wx.request({
-                    url: 'http://124.70.47.51/user/problem',
+                    url: 'http://172.17.175.235/user/problem',
                     method: "GET",
                     header: {
                       'Content-Type': 'application/json',

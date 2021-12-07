@@ -1,3 +1,3 @@
 <!--pages/login/login.wxml-->
-<image src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/new/one.png" class="bg"></image>
+<image src="http://124.70.47.51/file/download/images/login/one.png" class="bg"></image>
 <view class="login-button" bindtap="login"><view class="login-text">登录</view></view>

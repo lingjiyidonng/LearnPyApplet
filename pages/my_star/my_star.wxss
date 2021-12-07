@@ -27,7 +27,7 @@
     border-radius: 24rpx;
     /* border: 2rpx solid rgba(244, 139, 74, 100); */
     line-height: 90rpx;
-    /* background: url('https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/me/box3.png'); */
+    /* background: url('http://124.70.47.51/file/download/images/me/box3.png'); */
 }
 .btn_text{
     color: rgba(165, 95, 92, 100);
@@ -63,7 +63,7 @@
     width: 60rpx;
     height: 60rpx;
     border-radius: 28rpx;
-    background-image: url('https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/project/collection_dark.png');
+    background-image: url('http://124.70.47.51/file/download/images/project/collection_dark.png');
     background-position: center;
     background-color: #FFFFFF;
     background-size: 100%;
@@ -73,7 +73,7 @@
     width: 60rpx;
     height: 60rpx;
     border-radius: 28rpx;
-    background-image: url('https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/project/collection_luminous.png');
+    background-image: url('http://124.70.47.51/file/download/images/project/collection_luminous.png');
     background-position: center;
     background-size: 100%;
 }

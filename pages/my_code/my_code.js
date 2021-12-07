@@ -17,7 +17,7 @@ Page({
     onLoad: function (options) {
         var that = this
         wx.request({
-            url: 'http://124.70.47.51/user/home/code',
+            url: 'http://172.17.175.235/user/home/code',
             method: "GET",
             header: {
                 'Content-Type': 'application/json',

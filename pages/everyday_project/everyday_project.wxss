@@ -30,7 +30,7 @@
     border-radius: 24rpx;
     /* border: 4rpx solid rgba(244, 139, 74, 100); */
     background-color: #4A4A62;
-   /* background-image: url('https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/project/box3.png');*/
+   /* background-image: url('http://124.70.47.51/file/download/images/project/box3.png');*/
     text-align: center;
     display:inline-block;
     line-height: 90rpx;
@@ -42,7 +42,7 @@
     height: 90rpx;
     border-radius: 24rpx;
     /* border: 4rpx solid rgba(244, 139, 74, 100); */
-    background-image: url('https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/project/box3.png');
+    background-image: url('http://124.70.47.51/file/download/images/project/box3.png');
     text-align: center;
     display:inline-block;
     line-height: 90rpx;
@@ -71,7 +71,7 @@
     width: 58rpx;
     height: 58rpx;
     border-radius: 28rpx;
-    background-image: url('https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/project/collection_luminous.png');
+    background-image: url('http://124.70.47.51/file/download/images/project/collection_luminous.png');
     background-position: center;
     background-color: #FFFFFF;
     background-size: 100%;

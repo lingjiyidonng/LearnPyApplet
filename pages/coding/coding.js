@@ -47,7 +47,7 @@ Page({
         }
         else{
         wx.request({
-            url: "http://124.70.47.51/user/code/commit",
+            url: "http://172.17.175.235/user/code/commit",
             method: "post",
             header: {
                 "content-type": "application/json",
@@ -129,7 +129,7 @@ Page({
     collection: function () {
         var that = this;
         wx.request({
-            url: "http://124.70.47.51/user/course/collect",
+            url: "http://172.17.175.235/user/course/collect",
             method: "post",
             header: {
                 "content-type": "application/json",
@@ -152,7 +152,7 @@ Page({
     nocollection: function () {
         var that = this;
         wx.request({
-            url: "http://124.70.47.51/user/course/collect",
+            url: "http://172.17.175.235/user/course/collect",
             method: "delete",
             header: {
                 "content-type": "application/json",
@@ -183,7 +183,7 @@ Page({
             success(res) {
                 console.log("success write")
                 wx.uploadFile({
-                    url: 'http://124.70.47.51/file/upload',
+                    url: 'http://172.17.175.235/file/upload',
                     filePath: `${wx.env.USER_DATA_PATH}/_l${123}.py`,
                     name: 'file',
                     header: {
@@ -199,7 +199,7 @@ Page({
                         })
         
                         wx.request({
-                            url: "http://124.70.47.51/user/code/run",
+                            url: "http://172.17.175.235/user/code/run",
                             method: "post",
                             header: {
                                 "content-type": "application/json",
@@ -251,7 +251,7 @@ Page({
         var temp = options.courseid;
         var that = this;
         wx.request({
-            url: "http://124.70.47.51/user/course",
+            url: "http://172.17.175.235/user/course",
             method: "GET",
             header: {
                 "content-type": "application/json",
