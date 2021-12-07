@@ -51,7 +51,7 @@ Component({
                         console.log(res.code)
 
                         wx.request({
-                            url: 'http://124.70.47.51/user/login',
+                            url: 'http://172.17.175.235/user/login',
                             method: "POST",
                             header: {
                                 'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ Component({
                                 app.globalData.token = res.data.data.token;
                                 console.log(app.globalData.token) //拿到后将token存入全局变量  以便其他页面使用
                                 wx.request({
-                                    url: "http://124.70.47.51/user/sign",
+                                    url: "http://172.17.175.235/user/sign",
                                     method: "GET",
                                     header: {
                                         "content-type": "application/json",
@@ -92,7 +92,7 @@ Component({
             })
 
             // wx.request({
-            //     url: "http://124.70.47.51/user/home/project/random",
+            //     url: "http://172.17.175.235/user/home/project/random",
             //     method: "GET",
             //     header: {
             //         "content-type": "application/json",
@@ -136,7 +136,7 @@ Component({
     //                 // 发送 res.code 到后台换取 openId, sessionKey, unionId
     //                 if (res.code) {
     //                     wx.request({
-    //                         url: 'http://124.70.47.51/user/login',
+    //                         url: 'http://172.17.175.235/user/login',
     //                         method: "POST",
     //                         header: {
     //                             'Content-Type': 'application/json',
@@ -150,7 +150,7 @@ Component({
     //                             app.globalData.token = res.data.data.token;
     //                             console.log(app.globalData.token) //拿到后将token存入全局变量  以便其他页面使用
     //                             wx.request({
-    //                                 url: "http://124.70.47.51/user/sign",
+    //                                 url: "http://172.17.175.235/user/sign",
     //                                 method: "GET",
     //                                 header: {
     //                                     "content-type": "application/json",
@@ -175,7 +175,7 @@ Component({
     //             }
     //         })
     //         // wx.request({
-    //         //     url: "http://124.70.47.51/user/home/project/random",
+    //         //     url: "http://172.17.175.235/user/home/project/random",
     //         //     method: "GET",
     //         //     header: {
     //         //         "content-type": "application/json",

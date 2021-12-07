@@ -13,13 +13,13 @@
 
         <view wx:if="{{!item.is_collect}}">
           <image class="star-circle" bindtap="collection"   data-courseid="{{item.courseid}}"
-            src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/collection_dark.png"
+            src="http://124.70.47.51/file/download/images/course/collection_dark.png"
             mode="widthFix">
           </image>
         </view>
         <view wx:else>
           <image class="star-circle"  bindtap="nocollection"   data-courseid="{{item.courseid}}"
-          src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/collection_luminous.png"
+          src="http://124.70.47.51/file/download/images/course/collection_luminous.png"
             mode="widthFix">
           </image>
         </view>

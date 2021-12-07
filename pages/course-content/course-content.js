@@ -31,7 +31,7 @@ Page({
     collection: function () {
         var that = this;
         wx.request({
-            url: "http://124.70.47.51/user/course/collect",
+            url: "http://172.17.175.235/user/course/collect",
             method: "post",
             header: {
                 "content-type": "application/json",
@@ -55,7 +55,7 @@ Page({
     nocollection: function () {
         var that = this;
         wx.request({
-            url: "http://124.70.47.51/user/course/collect",
+            url: "http://172.17.175.235/user/course/collect",
             method: "delete",
             header: {
                 "content-type": "application/json",
@@ -100,7 +100,7 @@ Page({
     onShow: function () {
         var that = this;
         wx.request({
-            url: "http://124.70.47.51/user/course",
+            url: "http://172.17.175.235/user/course",
             method: "GET",
             header: {
                 "content-type": "application/json",

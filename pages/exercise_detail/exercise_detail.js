@@ -10,9 +10,9 @@ Page({
         problem:{
             
         },
-        robot_image:'https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/everyday_exercise/robot_dark.png',
-        robot_image_1:'https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/everyday_exercise/robot_dark.png',
-        robot_image_2:'https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/everyday_exercise/robot_luminous.png'
+        robot_image:'http://124.70.47.51/file/download/images/everyday_exercise/robot_dark.png',
+        robot_image_1:'http://124.70.47.51/file/download/images/everyday_exercise/robot_dark.png',
+        robot_image_2:'http://124.70.47.51/file/download/images/everyday_exercise/robot_luminous.png'
         
     },
 
@@ -23,7 +23,7 @@ Page({
             problemid: options.problemid,
         }),
         wx.request({
-            url: 'http://124.70.47.51/user/problem',
+            url: 'http://172.17.175.235/user/problem',
             method: "GET",
             header: {
               'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ Page({
         var that = this
         if (this.data.problem.is_solved==false) {
             wx.request({
-                url: 'http://124.70.47.51/user/problem/solve',
+                url: 'http://172.17.175.235/user/problem/solve',
                 method: "POST",
                 header: {
                   'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ Page({
         }
         else{
             wx.request({
-                url: 'http://124.70.47.51/user/problem/solve',
+                url: 'http://172.17.175.235/user/problem/solve',
                 method: "DELETE",
                 header: {
                   'Content-Type': 'application/json',

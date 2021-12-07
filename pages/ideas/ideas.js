@@ -30,7 +30,7 @@ Page({
         })
         console.log("ideas problemid " + this.data.problemid)
         wx.request({
-            url: 'http://124.70.47.51/user/problem/code',
+            url: 'http://172.17.175.235/user/problem/code',
             method: "GET",
             header: {
               'Content-Type': 'application/json',

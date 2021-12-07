@@ -3,18 +3,18 @@
     <view class="page-header">
         <!-- <view wx:if="{{!is_collect}}">
             <image class="star-circle" bindtap="collection"
-                src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/collection_dark.png">
+                src="http://124.70.47.51/file/download/images/course/collection_dark.png">
             </image>
         </view>
         <view wx:else>
             <image class="star-circle" bindtap="nocollection"
-                src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/collection_luminous.png">
+                src="http://124.70.47.51/file/download/images/course/collection_luminous.png">
             </image>
         </view> -->
         <view class="title">代码案例</view>
         <!-- <view class="title">{{course.title}}</view> -->
         <!-- <image class="share-circle"
-            src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/share.png"></image> -->
+            src="http://124.70.47.51/file/download/images/course/share.png"></image> -->
     </view>
     <view class="coding-box">
         <view class="coding-editor">
@@ -29,7 +29,7 @@
             </block>
         </view>
     </view>
-    <image class="coding-button" src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/box_1.png"
+    <image class="coding-button" src="http://124.70.47.51/file/download/images/course/box_1.png"
         bindtap="run"></image>
     <!-- <view class="result-box"><text>{{result}}</text></view> -->
     <view class="result-box">
@@ -40,7 +40,7 @@
         </view>
     </view>
 
-    <!-- <image class="coding-button" src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/box_2.png"
+    <!-- <image class="coding-button" src="http://124.70.47.51/file/download/images/course/box_2.png"
         bindtap="upload"></image> -->
 
 </view>

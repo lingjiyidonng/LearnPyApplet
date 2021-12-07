@@ -1,5 +1,5 @@
 <!--pages/component/home/home.js.wxml-->
-<image class="avatar" src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/homepage/learn_py.png">
+<image class="avatar" src="http://124.70.47.51/file/download/images/homepage/learn_py.png">
 </image>
 <view class="datebox">
     <view class="datebox-top">
@@ -26,7 +26,7 @@
 <view class="dailybox">
     <view class="dailybox-container1" bindtap="click1">
         <view class="dailybox-circle1">
-            <image src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/homepage/everyday_exercise.png"
+            <image src="http://124.70.47.51/file/download/images/homepage/everyday_exercise.png"
                 style="width: 70rpx; height:76rpx">
             </image>
         </view>
@@ -38,7 +38,7 @@
     <view class="dailybox-line"></view>
     <view class="dailybox-container2" bindtap="click2">
         <view class="dailybox-circle2">
-            <image src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/homepage/everyday_project.png"
+            <image src="http://124.70.47.51/file/download/images/homepage/everyday_project.png"
             style="width: 94rpx; height:101rpx">
             </image>
         </view>

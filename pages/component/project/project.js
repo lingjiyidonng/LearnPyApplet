@@ -38,7 +38,7 @@ Component({
         title_name_list:[
             "网络爬虫","网络开发","机器人","数据科学","机器学习","OpenCV","深度学习","其他"
         ],
-        type_image:'https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/project/box3.png'
+        type_image:'http://124.70.47.51/file/download/images/project/box3.png'
     },
     
     pageLifetimes: {
@@ -52,7 +52,7 @@ Component({
                     // 发送 res.code 到后台换取 openId, sessionKey, unionId
                     if (res.code) {
                         wx.request({
-                            url: 'http://124.70.47.51/user/login',
+                            url: 'http://172.17.175.235/user/login',
                             method: "POST",
                             header: {
                                 'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ Component({
                                 app.globalData.token = res.data.data.token;
                                 // console.log(app.globalData.token) //拿到后将token存入全局变量  以便其他页面使用
                                 wx.request({
-                                    url: 'http://124.70.47.51/user/project/getlist',
+                                    url: 'http://172.17.175.235/user/project/getlist',
                                     method: "GET",
                                     header: {
                                         'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ Component({
             })
             var that = this
             wx.request({
-                url: 'http://124.70.47.51/user/project/getlist',
+                url: 'http://172.17.175.235/user/project/getlist',
                 method: "GET",
                 header: {
                     'Content-Type': 'application/json',
@@ -189,7 +189,7 @@ Component({
                 console.log("this project is collected")
                 //delete
                 wx.request({
-                    url: 'http://124.70.47.51/user/project/collect',
+                    url: 'http://172.17.175.235/user/project/collect',
                     method: "DELETE",
                     header: {
                       'Content-Type': 'application/json',
@@ -213,7 +213,7 @@ Component({
                 console.log("this project is not collectd")
                 //star
                 wx.request({
-                  url: 'http://124.70.47.51/user/project/collect',
+                  url: 'http://172.17.175.235/user/project/collect',
                   method: "POST",
                   header: {
                     'Content-Type': 'application/json',

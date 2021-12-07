@@ -115,7 +115,7 @@
     line-height: 72rpx;
     text-align: center;
     /* border: 1rpx solid rgba(187, 187, 187, 100); */
-    background: url('https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/me/collection_dark.png');
+    background: url('http://124.70.47.51/file/download/images/me/collection_dark.png');
     background-size: 100%;
 }
 .my-list-item-icon2{
@@ -125,7 +125,7 @@
     line-height: 72rpx;
     text-align: center;
     border-radius: 50%;
-    background: url('https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/me/my_code.png') no-repeat;
+    background: url('http://124.70.47.51/file/download/images/me/my_code.png') no-repeat;
     background-size: 80%;
     background-position: center;
     background-color: #FFFFFF;
@@ -137,7 +137,7 @@
     line-height: 72rpx;
     text-align: center;
     border-radius: 50%;
-    background: url('https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/me/help.png') no-repeat;
+    background: url('http://124.70.47.51/file/download/images/me/help.png') no-repeat;
     background-size: 80%;
     background-position: center;
     background-color: #FFFFFF;

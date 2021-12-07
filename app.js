@@ -5,7 +5,10 @@ App({
   globalData: {
     token: '',
     userInfo: null,
-    
+    is_collected:[
+
+    ],
+    star_projects: 0
   },
   onLaunch() {
     // 展示本地存储能力

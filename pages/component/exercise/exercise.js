@@ -44,7 +44,7 @@ Component({
                     // 发送 res.code 到后台换取 openId, sessionKey, unionId
                     if (res.code) {
                         wx.request({
-                            url: 'http://124.70.47.51/user/login',
+                            url: 'http://172.17.175.235/user/login',
                             method: "POST",
                             header: {
                                 'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ Component({
                                 app.globalData.token = res.data.data.token;
                                 console.log(app.globalData.token) //拿到后将token存入全局变量  以便其他页面使用
                                 wx.request({
-                                    url: "http://124.70.47.51/user/problem/getlist",
+                                    url: "http://172.17.175.235/user/problem/getlist",
                                     method: "GET",
                                     header: {
                                         "content-type": "application/json",
@@ -107,7 +107,7 @@ Component({
                 console.log("this problem is solved")
                 //delete
                 wx.request({
-                    url: 'http://124.70.47.51/user/problem/solve',
+                    url: 'http://172.17.175.235/user/problem/solve',
                     method: "DELETE",
                     header: {
                       'Content-Type': 'application/json',
@@ -131,7 +131,7 @@ Component({
                 console.log("this problem is not solved")
                 //star
                 wx.request({
-                  url: 'http://124.70.47.51/user/problem/solve',
+                  url: 'http://172.17.175.235/user/problem/solve',
                   method: "POST",
                   header: {
                     'Content-Type': 'application/json',

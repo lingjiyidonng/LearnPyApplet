@@ -85,27 +85,27 @@
   }
   
   .icon-teach{
-    content: url('https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/course_luminous.png');
+    content: url('http://124.70.47.51/file/download/images/course/course_luminous.png');
     width: 100rpx;
     height: 100rpx;
   }
   .icon-practise{
-    content: url('https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/exercise/exercise_luminous.png');
+    content: url('http://124.70.47.51/file/download/images/exercise/exercise_luminous.png');
     width: 100rpx;
     height: 100rpx;
   }
   .icon-home{
-    content: url('https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/homepage/recommendation.png');
+    content: url('http://124.70.47.51/file/download/images/homepage/recommendation.png');
     width: 100rpx;
     height: 100rpx;
   }
   .icon-project{
-    content: url('https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/project/project_luminous.png');
+    content: url('http://124.70.47.51/file/download/images/project/project_luminous.png');
     width: 100rpx;
     height: 100rpx;
   }
   .icon-my{
-    content: url('https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/me/me_luminous.png');
+    content: url('http://124.70.47.51/file/download/images/me/me_luminous.png');
     width: 100rpx;
     height: 100rpx;
   }

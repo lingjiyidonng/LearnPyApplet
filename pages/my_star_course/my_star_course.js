@@ -9,7 +9,7 @@ Page({
         item_title_list:[
             "初识Python","分支结构","循环结构","函数与模块"
         ],
-        btn_image: 'https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/me/box3.png',
+        btn_image: 'http://124.70.47.51/file/download/images/me/box3.png',
         courses:[
 
         ]
@@ -27,7 +27,7 @@ Page({
     onLoad:function () {
         var that = this;
         wx.request({
-            url: 'http://124.70.47.51/user/home/course',
+            url: 'http://172.17.175.235/user/home/courses',
             method: "GET",
             header: {
                 'Content-Type': 'application/json',
@@ -44,7 +44,26 @@ Page({
         })
         
     },
-
+    onShow:function () {
+        var that = this;
+        wx.request({
+            url: 'http://172.17.175.235/user/home/courses',
+            method: "GET",
+            header: {
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + app.globalData.token
+            },
+            success(res){
+                //console.log(res)
+                that.setData({
+                    courses: res.data.data.courses
+                })
+                //console.log(that.data.projects)
+            },
+            
+        })
+        
+    },
     toCourse_content:function (e) {
         console.log(e.currentTarget.dataset.id)
         var that = this
