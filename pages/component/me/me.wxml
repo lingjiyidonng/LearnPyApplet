@@ -1,6 +1,8 @@
 <!--pages/component/me/me.js.wxml-->
 <view wx:if="{{!islogin}}">
+
     <image src="http://124.70.47.51/file/download/images/login/one.png" class="bg"></image>
+
     <view class="login-button" bindtap="login">
         <view class="login-text">登录</view>
     </view>

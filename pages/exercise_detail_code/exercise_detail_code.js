@@ -46,7 +46,9 @@ Page({
             })
         } else {
             wx.request({
+
                 url: "http://172.17.175.235/user/code/commit",
+
                 method: "post",
                 header: {
                     "content-type": "application/json",
@@ -181,7 +183,9 @@ Page({
             success(res) {
                 console.log(res.data)
                 wx.uploadFile({
+
                     url: 'http://172.17.175.235/file/upload',
+
                     filePath: `${wx.env.USER_DATA_PATH}/_l${123}.py`,
                     name: 'file',
                     header: {
@@ -197,7 +201,9 @@ Page({
                         })
 
                         wx.request({
+
                             url: "http://172.17.175.235/user/code/run",
+
                             method: "post",
                             header: {
                                 "content-type": "application/json",
@@ -256,7 +262,9 @@ Page({
     },
 
     // wx.request({
+
     //     url: "http://172.17.175.235/user/course",
+
     //     method: "GET",
     //     header: {
     //         "content-type": "application/json",
