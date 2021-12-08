@@ -13,8 +13,8 @@
             </image>
         </view>
         <view class="title">{{course.title}}</view>
-        <image class="share-circle"
-            src="http://124.70.47.51/file/download/images/course/share.png"></image>
+        <view class="share-circle" 
+            src="https://learnpystaticpng.obs.cn-north-1.myhuaweicloud.com/images/course/share.png"></view>
     </view>
     <view class="course-box">
         <view class="scroll-list">
