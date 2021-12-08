@@ -1,5 +1,9 @@
 <!--pages/component/course/course.js.wxml-->
 <view class="c-container">
+  <view class="scroll-list" >
+            <scroll-view class="page-section" scroll-y="ture" enhanced="ture" show-scrollbar="false">
+               
+        
   <block wx:for="{{courselist}}" wx:key="index">
     <view class="top-box">
       <view class="box-front" bindtap="courseSelect" data-courseid="{{item.courseid}}">
@@ -28,4 +32,6 @@
 
     <view class="course-line"></view>
   </block>
+</scroll-view>
+        </view>
 </view>
