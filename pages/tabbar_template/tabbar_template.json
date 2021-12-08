@@ -6,6 +6,6 @@
     "component_project": "/pages/component/project/project",
     "component_me": "/pages/component/me/me"
   },
-  "enablePullDownRefresh": true,
+  "enablePullDownRefresh": false,
   "onReachBottomDistance": 50
 }

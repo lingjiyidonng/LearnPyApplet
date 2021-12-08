@@ -19,10 +19,12 @@
         
     ],
     "window": {
+        "enablePullDownRefresh": false,
         "backgroundTextStyle": "dark",
         "navigationBarBackgroundColor": "#000",
         "navigationBarTitleText": "学派",
         "navigationBarTextStyle": "white"
     },
     "sitemapLocation": "sitemap.json"
+    
 }
